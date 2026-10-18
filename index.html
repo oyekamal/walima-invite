@@ -13,7 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Great+Vibes&display=swap" rel="stylesheet">
 <style>
 :root{
-  --plum:#5e2142; --plum-2:#7d3459; --rose:#c45d7d; --sakura:#f5c3cf; --gold:#8c6a34;
+  --plum:#5e2142; --plum-2:#7d3459; --rose:#c45d7d; --sakura:#f5c3cf; --gold:#7a5a26;
   --paper:#fdf8f4; --ink:#3b2a31; --page:#f3e6e6;
 }
 *{box-sizing:border-box;margin:0}
@@ -30,30 +30,30 @@ body{background:var(--page);color:var(--ink);font-family:"Cormorant Garamond",Ge
     radial-gradient(ellipse 40% 25% at 100% 35%,#fbecef 0,transparent 70%)}
 .frame{position:absolute;inset:4cqw;width:92cqw;height:133cqw;pointer-events:none}
 .branch{position:absolute;pointer-events:none}
-.branch.tl{top:-7cqw;left:-7cqw;width:66cqw}
-.branch.br{bottom:-8cqw;right:-9cqw;width:52cqw;transform:rotate(180deg)}
+.branch.tl{top:-10cqw;left:-10cqw;width:64cqw}
+.branch.br{bottom:-7cqw;right:-8cqw;width:42cqw;transform:rotate(180deg)}
 .petal-fall{position:absolute;inset:0;pointer-events:none}
 
-.content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;text-align:center;padding:23.5cqw 16cqw 13.5cqw;justify-content:space-between}
-.bism{font-family:Amiri,serif;font-weight:700;font-size:5.2cqw;color:var(--plum);line-height:1.5;direction:rtl}
+.content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;text-align:center;padding:22cqw 16cqw 13cqw;justify-content:space-between}
+.bism{font-family:Amiri,serif;font-weight:700;font-size:4.7cqw;color:var(--plum);line-height:1.45;direction:rtl}
 .salam{margin-top:1.4cqw;font-size:2.9cqw;letter-spacing:.7cqw;text-transform:uppercase;color:var(--gold);font-weight:700}
-.lede{font-size:3.3cqw;line-height:1.3;color:var(--ink)}
-.walima{font-family:"Great Vibes",cursive;font-size:7.6cqw;color:var(--rose);line-height:1}
+.lede{font-size:3.4cqw;line-height:1.3;color:var(--ink)}
+.walima{font-family:"Great Vibes",cursive;font-size:7.6cqw;color:var(--rose);line-height:1;margin-top:1.2cqw}
 .names{display:flex;flex-direction:column;align-items:center;margin-top:1.5cqw}
-.name{font-family:"Great Vibes",cursive;color:var(--plum);line-height:1.1;font-size:8.8cqw}
-.amp{font-family:"Great Vibes",cursive;color:var(--gold);font-size:6.4cqw;line-height:.9}
-.bride{font-size:3.1cqw;letter-spacing:.6cqw;text-transform:uppercase;color:var(--gold);font-weight:700;margin-top:.4cqw}
-.bride + .name{font-size:8.2cqw}
+.name{font-family:"Great Vibes",cursive;color:var(--plum);line-height:1.1;font-size:8.4cqw}
+.amp{font-family:"Great Vibes",cursive;color:var(--gold);font-size:7cqw;line-height:.95}
+.bride{font-size:3.1cqw;letter-spacing:.6cqw;text-transform:uppercase;color:var(--gold);font-weight:700;margin:.4cqw 0 1.8cqw}
+.bride + .name{font-size:7.8cqw}
 .when{width:100%;color:var(--plum)}
 .month,.year{font-size:3.1cqw;letter-spacing:1.1cqw;text-transform:uppercase;color:var(--gold);font-weight:700}
 .date{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:3cqw;margin:1cqw 0}
 .date .side{border-top:.22cqw solid var(--rose);border-bottom:.22cqw solid var(--rose);padding:1.2cqw 0;font-size:3.1cqw;font-weight:700;letter-spacing:.3cqw;white-space:nowrap;text-transform:uppercase}
 .date .day{font-size:9.5cqw;font-weight:500;line-height:.85}
-.venue-row{display:flex;align-items:center;gap:4cqw;text-align:left;width:100%;background:#fff8f8cc;border:.2cqw solid #efc9d3;border-radius:2cqw;padding:1.8cqw 3cqw}
-.venue{flex:1;font-size:3.35cqw;line-height:1.35}
-.venue small,.rsvp small{display:block;font-size:2.5cqw;letter-spacing:.7cqw;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:.5cqw}
-.venue strong{color:var(--plum);font-weight:700;font-size:4cqw;display:block}
-.qr{flex:none;width:13.5cqw;text-align:center;font-size:2cqw;letter-spacing:.1cqw;white-space:nowrap;color:var(--plum);text-transform:uppercase;font-weight:700}
+.venue-row{display:flex;align-items:center;gap:3cqw;text-align:left;width:100%;background:#fff8f8cc;border:.2cqw solid #efc9d3;border-radius:2cqw;padding:1.8cqw 3cqw}
+.venue{flex:1;font-size:3.15cqw;line-height:1.35}
+.venue small,.rsvp small{display:block;font-size:2.8cqw;letter-spacing:.7cqw;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:.5cqw}
+.venue strong{color:var(--plum);font-weight:700;font-size:3.7cqw;display:block;white-space:nowrap}
+.qr{flex:none;width:18cqw;text-align:center;font-size:2.3cqw;letter-spacing:.1cqw;white-space:nowrap;color:var(--plum);text-transform:uppercase;font-weight:700}
 .qr a{display:block;background:#fff;padding:1.1cqw;border:.22cqw solid var(--gold);border-radius:1cqw;margin-bottom:.7cqw}
 .qr img{display:block;width:100%;height:auto}
 .rsvp{font-size:3.6cqw;color:var(--plum)}
@@ -219,7 +219,7 @@ body{background:var(--page);color:var(--ink);font-family:"Cormorant Garamond",Ge
       </div>
       <div class="qr">
         <a href="https://www.google.com/maps/search/?api=1&query=Al+Firdous+Marriage+Hall%2C+Lehtrar+Road%2C+Sanam+Chowk%2C+Islamabad" aria-label="Open venue in Google Maps"><img src="qr.svg" alt="QR code to the venue on Google Maps"></a>
-        Scan me
+        Scan for map
       </div>
     </div>
     <div>
