@@ -4,190 +4,241 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Barat Invitation</title>
-<meta name="description" content="You are cordially invited to the Barat of Huzifa Rasheed, Saturday 14 November 2026, Al Firdous Marriage Hall, Islamabad.">
+<meta name="description" content="You are cordially invited to the Barat of Huzifa Rasheed, Saturday 14 November 2026, 12 PM to 4 PM, Al Firdous Marriage Hall, Islamabad.">
 <meta property="og:title" content="Barat Invitation · 14 November 2026">
-<meta property="og:description" content="Huzifa Rasheed & Daughter of Badshah Umar · Al Firdous Marriage Hall, Islamabad">
+<meta property="og:description" content="Huzifa Rasheed & Daughter of Badshah Umar · 12 PM – 4 PM · Al Firdous Marriage Hall, Islamabad">
 <meta property="og:image" content="card.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Great+Vibes&display=swap" rel="stylesheet">
 <style>
-:root{
-  --plum:#5e2142; --plum-2:#7d3459; --rose:#c45d7d; --sakura:#f5c3cf; --gold:#7a5a26;
-  --paper:#fdf8f4; --ink:#3b2a31; --page:#f3e6e6;
-}
+:root{--page:#141010;--page-ink:#e9dcc6;--chip:#1f1817;--gold:#c9a14a}
 *{box-sizing:border-box;margin:0}
-body{background:var(--page);color:var(--ink);font-family:"Cormorant Garamond",Georgia,serif;font-variant-numeric:lining-nums;
-  min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:24px 16px 48px;
-  background-image:radial-gradient(circle at 15% 8%,#fbeff1 0,transparent 45%),radial-gradient(circle at 90% 95%,#ecd7dc 0,transparent 45%)}
-.card{width:min(100%,560px);aspect-ratio:1135/1600;container-type:inline-size;position:relative;overflow:hidden;
-  background:var(--paper);border-radius:6px;box-shadow:0 30px 60px -22px #5e214255,0 4px 14px #0002}
-/* watercolour wash */
-.card::before{content:"";position:absolute;inset:0;
-  background:radial-gradient(ellipse 65% 45% at 50% 50%,#fff 0,transparent 70%),
-    radial-gradient(ellipse 55% 30% at 0% 0%,#f9dde3 0,transparent 70%),
-    radial-gradient(ellipse 55% 30% at 100% 100%,#f9dde3 0,transparent 70%),
-    radial-gradient(ellipse 40% 25% at 100% 35%,#fbecef 0,transparent 70%)}
-.frame{position:absolute;inset:4cqw;width:92cqw;height:133cqw;pointer-events:none}
-.branch{position:absolute;pointer-events:none;overflow:visible}
-.branch.tl{top:-10cqw;left:-10cqw;width:64cqw}
-.branch.br{bottom:-7cqw;right:-8cqw;width:42cqw;transform:rotate(180deg)}
-.petal-fall{position:absolute;inset:0;pointer-events:none}
+body{background:var(--page);color:var(--page-ink);font-family:"Cormorant Garamond",Georgia,serif;font-variant-numeric:lining-nums;
+  min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:20px 16px 48px;transition:background .6s;
+  background-image:radial-gradient(circle at 15% 0%,#3a1216 0,transparent 40%),radial-gradient(circle at 90% 100%,#2c2210 0,transparent 45%)}
+body.light{--page:#f3e6e6;--page-ink:#3b2a31;--chip:#fffafa;background-image:radial-gradient(circle at 15% 8%,#fbeff1 0,transparent 45%),radial-gradient(circle at 90% 95%,#ecd7dc 0,transparent 45%)}
 
-.content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;text-align:center;padding:22cqw 16cqw 13cqw;justify-content:space-between}
-.bism{font-family:Amiri,serif;font-weight:700;font-size:4.7cqw;color:var(--plum);line-height:1.45;direction:rtl}
-.salam{margin-top:1.4cqw;font-size:2.9cqw;letter-spacing:.7cqw;text-transform:uppercase;color:var(--gold);font-weight:700}
-.lede{font-size:3.4cqw;line-height:1.3;color:var(--ink)}
-.walima{font-family:"Great Vibes",cursive;font-size:7.6cqw;color:var(--rose);line-height:1;margin-top:1.2cqw}
-.names{display:flex;flex-direction:column;align-items:center;margin-top:1.5cqw}
-.name{font-family:"Great Vibes",cursive;color:var(--plum);line-height:1.1;font-size:8.4cqw}
-.amp{font-family:"Great Vibes",cursive;color:var(--gold);font-size:7cqw;line-height:.95}
-.bride{font-size:3.1cqw;letter-spacing:.6cqw;text-transform:uppercase;color:var(--gold);font-weight:700;margin:.4cqw 0 1.8cqw}
-.bride + .name{font-size:7cqw}
-.when{width:100%;color:var(--plum)}
-.month,.year{font-size:3.1cqw;letter-spacing:1.1cqw;text-transform:uppercase;color:var(--gold);font-weight:700}
-.date{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:3cqw;margin:1cqw 0}
-.date .side{border-top:.22cqw solid var(--rose);border-bottom:.22cqw solid var(--rose);padding:1.2cqw 0;font-size:3.1cqw;font-weight:700;letter-spacing:.3cqw;white-space:nowrap;text-transform:uppercase}
+/* ---------- design picker ---------- */
+.picker{width:min(100%,560px);margin-bottom:16px}
+.picker h1{font:400 32px/1.1 "Great Vibes",cursive;color:var(--gold);text-align:center}
+.picker p{text-align:center;font-size:15px;opacity:.8;margin:4px 0 12px}
+.chips{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.chip{appearance:none;border:1.5px solid #c9a14a44;background:var(--chip);color:inherit;border-radius:14px;padding:8px 4px 7px;cursor:pointer;
+  font:600 12.5px/1.15 "Cormorant Garamond",serif;display:flex;flex-direction:column;align-items:center;gap:6px;transition:transform .2s,border-color .2s}
+.chip:hover{transform:translateY(-2px)}
+.chip[aria-pressed="true"]{border-color:var(--gold);box-shadow:0 0 0 2px #c9a14a55}
+.chip:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.sw{width:34px;height:34px;border-radius:50%;border:1.5px solid #c9a14a88}
+.blurb{text-align:center;font-style:italic;font-size:16px;min-height:2.6em;margin-top:10px;opacity:.9}
+@media (max-width:420px){.chip{font-size:11px}.sw{width:28px;height:28px}}
+
+/* ---------- card + themes ---------- */
+.card{width:min(100%,560px);aspect-ratio:1135/1600;container-type:inline-size;position:relative;overflow:hidden;border-radius:6px;
+  background:var(--bg);box-shadow:0 30px 70px -24px var(--shadow),0 4px 14px #0004;isolation:isolate;transition:background .6s}
+.card::before{content:"";position:absolute;inset:0;background:var(--wash);z-index:0}
+.card[data-theme="midnight"]{--bg:radial-gradient(ellipse 80% 60% at 50% 45%,#1e1515 0,#0b0808 75%);
+  --wash:radial-gradient(ellipse 55% 30% at 0% 0%,#5a0a1488 0,transparent 70%),radial-gradient(ellipse 55% 30% at 100% 100%,#5a0a1477 0,transparent 70%),radial-gradient(ellipse 45% 30% at 50% 50%,#c9a14a10 0,transparent 70%);
+  --shadow:#000;--name:#e8c877;--accent:#e2303f;--label:#c9a14a;--body:#eadfca;--strong:#f0d28a;--rule:#b52331;
+  --box:#ffffff07;--boxline:#c9a14a59;--f1:#c9a14a;--f2:#7d1520;--grain:.32;--blend:soft-light}
+.card[data-theme="lacquer"]{--bg:linear-gradient(160deg,#9a1424 0%,#6e0b17 48%,#3c050b 100%);
+  --wash:radial-gradient(ellipse 60% 35% at 20% 8%,#ffffff1c 0,transparent 70%),radial-gradient(ellipse 70% 30% at 50% 100%,#00000055 0,transparent 70%);
+  --shadow:#3c050b;--name:#f5d685;--accent:#ffe7b0;--label:#f2c766;--body:#fbeee0;--strong:#fff1cf;--rule:#e8b84a;
+  --box:#00000026;--boxline:#e8b84a80;--f1:#e8b84a;--f2:#2a0408;--grain:.35;--blend:soft-light}
+.card[data-theme="thread"]{--bg:radial-gradient(ellipse 85% 65% at 50% 42%,#1a1312 0,#090707 78%);
+  --wash:radial-gradient(ellipse 50% 22% at 50% 4%,#c9a14a14 0,transparent 70%);
+  --shadow:#000;--name:#ecd08a;--accent:#d8283a;--label:#c9a14a;--body:#eadfca;--strong:#f0d28a;--rule:#c9a14a;
+  --box:#ffffff06;--boxline:#c9a14a52;--f1:#c9a14a;--f2:#c9a14a;--grain:.3;--blend:soft-light}
+.card[data-theme="breeze"]{--bg:linear-gradient(175deg,#1c1714 0%,#120e0d 55%,#0a0807 100%);
+  --wash:radial-gradient(ellipse 60% 30% at 10% 5%,#6a0e1866 0,transparent 70%),radial-gradient(ellipse 50% 25% at 100% 60%,#c9a14a12 0,transparent 70%);
+  --shadow:#000;--name:#e8c877;--accent:#e2303f;--label:#c9a14a;--body:#eadfca;--strong:#f0d28a;--rule:#b52331;
+  --box:#0000004d;--boxline:#c9a14a59;--f1:#c9a14a;--f2:#7d1520;--grain:.3;--blend:soft-light}
+.card[data-theme="blush"]{--bg:#fdf8f4;
+  --wash:radial-gradient(ellipse 65% 45% at 50% 50%,#fff 0,transparent 70%),radial-gradient(ellipse 55% 30% at 0% 0%,#f9dde3 0,transparent 70%),radial-gradient(ellipse 55% 30% at 100% 100%,#f9dde3 0,transparent 70%);
+  --shadow:#5e214255;--name:#5e2142;--accent:#c45d7d;--label:#7a5a26;--body:#3b2a31;--strong:#5e2142;--rule:#c45d7d;
+  --box:#fff8f8cc;--boxline:#efc9d3;--f1:#a8834a;--f2:#e4b9c4;--grain:.22;--blend:multiply}
+
+.layer{position:absolute;inset:0;pointer-events:none}
+.grain{z-index:1;width:100%;height:100%;opacity:var(--grain);mix-blend-mode:var(--blend)}
+.frame{position:absolute;inset:4cqw;width:92cqw;height:133cqw;pointer-events:none;z-index:2}
+canvas.air{z-index:3;width:100%;height:100%}
+.branch{position:absolute;pointer-events:none;overflow:visible;z-index:4}
+.branch.tl{top:-10cqw;left:-10cqw;width:64cqw;transform-origin:8% 8%;animation:swayA 6s ease-in-out infinite alternate}
+.branch.br{bottom:-7cqw;right:-8cqw;width:42cqw;transform-origin:50% 50%;animation:swayB 7s ease-in-out infinite alternate}
+@keyframes swayA{from{transform:rotate(-1.2deg)}to{transform:rotate(1.6deg)}}
+@keyframes swayB{from{transform:rotate(178.8deg)}to{transform:rotate(181.4deg)}}
+.card[data-theme="thread"] .branch,.card[data-theme="breeze"] .branch.br{display:none}
+.card[data-theme="thread"] .frame{display:none}
+.extra{display:none}
+.card[data-theme="lacquer"] .x-lacquer,.card[data-theme="thread"] .x-thread,.card[data-theme="breeze"] .x-breeze{display:block}
+
+/* lacquer: seigaiha waves + rising lanterns */
+.seigaiha{position:absolute;left:0;right:0;bottom:0;height:34cqw;width:100%;z-index:1;opacity:.22;
+  -webkit-mask:linear-gradient(transparent,#000 70%);mask:linear-gradient(transparent,#000 70%)}
+.lantern{position:absolute;bottom:-14cqw;width:6.4cqw;z-index:3;animation:rise linear infinite;filter:drop-shadow(0 0 2.2cqw #ffb34788)}
+.lantern svg{display:block;width:100%;animation:bob 3.2s ease-in-out infinite alternate;transform-origin:50% 0}
+@keyframes rise{from{transform:translateY(0)}to{transform:translateY(-165cqw)}}
+@keyframes bob{from{transform:rotate(-5deg) translateX(-1cqw)}to{transform:rotate(5deg) translateX(1cqw)}}
+
+/* thread */
+.thread{position:absolute;inset:0;width:100cqw;height:141cqw;z-index:4;overflow:visible}
+.thread .string{fill:none;stroke:#d8283a;stroke-width:.55;stroke-linecap:round;stroke-linejoin:round;
+  filter:drop-shadow(0 0 .5px #ff4a5a);stroke-dasharray:1;stroke-dashoffset:0;animation:draw 5s cubic-bezier(.6,.05,.3,1) .4s backwards}
+.thread .rest{fill:none;stroke:#c9a14a;stroke-width:.22;opacity:.8}
+.thread .ring{fill:none;stroke:#d8283a;stroke-width:.45;animation:pop .6s ease-out backwards}
+.thread .r1{animation-delay:.2s}.thread .r2{animation-delay:5.2s}
+.thread .heart{transform-origin:50px 6.5px;animation:beat 1.6s ease-in-out 5.6s infinite}
+@keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@keyframes pop{from{opacity:0;transform:scale(.2)}to{opacity:1}}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.18)}30%{transform:scale(1)}45%{transform:scale(1.1)}}
+
+/* breeze: hanko seal */
+.seal{position:absolute;left:6.5cqw;bottom:6.5cqw;width:12.5cqw;z-index:5;transform:rotate(-9deg);opacity:.92}
+
+/* ---------- content ---------- */
+.content{position:absolute;inset:0;z-index:6;display:flex;flex-direction:column;align-items:center;text-align:center;padding:21.5cqw 16cqw 12cqw;justify-content:space-between}
+.bism{font-family:Amiri,serif;font-weight:700;font-size:4.6cqw;color:var(--strong);line-height:1.45;direction:rtl}
+.salam{margin-top:1.2cqw;font-size:2.9cqw;letter-spacing:.7cqw;text-transform:uppercase;color:var(--label);font-weight:700}
+.lede{font-size:3.4cqw;line-height:1.3;color:var(--body)}
+.event{font-family:"Great Vibes",cursive;font-size:7.6cqw;color:var(--accent);line-height:1;margin-top:1cqw}
+.names{display:flex;flex-direction:column;align-items:center;margin-top:1cqw}
+.name{font-family:"Great Vibes",cursive;color:var(--name);line-height:1.12;font-size:8.2cqw;padding:0 2cqw}
+.amp{font-family:"Great Vibes",cursive;color:var(--label);font-size:6.6cqw;line-height:.95}
+.bride{font-size:3.1cqw;letter-spacing:.6cqw;text-transform:uppercase;color:var(--label);font-weight:700;margin:.4cqw 0 1.4cqw}
+.bride + .name{font-size:6.9cqw}
+.card:not([data-theme="blush"]) .name{background:linear-gradient(100deg,#8c6420 0%,#e9c46a 18%,#fff0c2 30%,#c99a3c 44%,#8c6420 56%,#f2d68e 74%,#b8892f 100%);
+  background-size:260% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:foil 7s linear infinite}
+.card[data-theme="lacquer"] .name{background-image:linear-gradient(100deg,#c99a3c 0%,#ffe9a8 18%,#fffaf0 30%,#f0c96a 44%,#c99a3c 56%,#ffe5a0 74%,#e0ad4c 100%)}
+@keyframes foil{from{background-position:100% 0}to{background-position:-160% 0}}
+.when{width:100%;color:var(--strong)}
+.date{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:3cqw}
+.date .side{border-top:.22cqw solid var(--rule);border-bottom:.22cqw solid var(--rule);padding:1.2cqw 0;font-size:3.1cqw;font-weight:700;letter-spacing:.3cqw;text-transform:uppercase;white-space:nowrap}
 .date .day{font-size:9.5cqw;font-weight:500;line-height:.85}
-.venue-row{display:flex;align-items:center;gap:3cqw;text-align:left;width:100%;background:#fff8f8cc;border:.2cqw solid #efc9d3;border-radius:2cqw;padding:1.8cqw 3cqw}
-.venue{flex:1;font-size:3.15cqw;line-height:1.35}
-.venue small,.rsvp small{display:block;font-size:2.8cqw;letter-spacing:.7cqw;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:.5cqw}
-.venue strong{color:var(--plum);font-weight:700;font-size:3.7cqw;display:block;white-space:nowrap}
-.qr{flex:none;width:18cqw;text-align:center;font-size:2.3cqw;letter-spacing:.1cqw;white-space:nowrap;color:var(--plum);text-transform:uppercase;font-weight:700}
-.qr a{display:block;background:#fff;padding:1.1cqw;border:.22cqw solid var(--gold);border-radius:1cqw;margin-bottom:.7cqw}
+.time{margin-top:1.2cqw;font-size:3.4cqw;font-weight:700;letter-spacing:.35cqw;color:var(--strong)}
+.time span{color:var(--label);padding:0 1cqw}
+.venue-row{display:flex;align-items:center;gap:3cqw;text-align:left;width:100%;background:var(--box);border:.2cqw solid var(--boxline);border-radius:2cqw;padding:1.8cqw 3cqw}
+.venue{flex:1;font-size:3.15cqw;line-height:1.35;color:var(--body)}
+.venue small,.rsvp small{display:block;font-size:2.8cqw;letter-spacing:.7cqw;text-transform:uppercase;color:var(--label);font-weight:700;margin-bottom:.5cqw}
+.venue strong{color:var(--strong);font-weight:700;font-size:3.7cqw;display:block;white-space:nowrap}
+.qr{flex:none;width:17cqw;text-align:center;font-size:2.2cqw;letter-spacing:.1cqw;white-space:nowrap;color:var(--strong);text-transform:uppercase;font-weight:700}
+.qr a{display:block;background:#fff;padding:1.1cqw;border:.25cqw solid var(--f1);border-radius:1cqw;margin-bottom:.7cqw}
 .qr img{display:block;width:100%;height:auto}
-.rsvp{font-size:3.6cqw;color:var(--plum);margin-top:1.5cqw}
+.rsvp{font-size:3.6cqw;color:var(--strong);margin-top:1cqw}
 .rsvp small{letter-spacing:1cqw}
 .rsvp a{color:inherit;text-decoration:none;font-weight:700}
-.close{font-family:"Great Vibes",cursive;font-size:4.4cqw;color:var(--rose);margin-top:.6cqw}
+.close{font-family:"Great Vibes",cursive;font-size:4.4cqw;color:var(--accent);margin-top:.4cqw}
 
-.fall{position:absolute;top:-4cqw;width:2.4cqw;opacity:0;animation:fall linear infinite}
-@keyframes fall{0%{transform:translate(0,0) rotate(0);opacity:0}10%{opacity:.9}100%{transform:translate(-14cqw,150cqw) rotate(400deg);opacity:0}}
-@media (prefers-reduced-motion:reduce){.fall{display:none}}
-
+/* ---------- actions ---------- */
 .actions{width:min(100%,560px);display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
 .btn{display:flex;align-items:center;justify-content:center;padding:13px 10px;border-radius:999px;text-decoration:none;text-align:center;
-  font:700 16px/1.1 "Cormorant Garamond",serif;letter-spacing:.04em;font-variant-numeric:lining-nums;border:1.5px solid var(--plum);color:var(--plum);background:#fffafa}
-.btn.primary{background:var(--plum);color:#fdf3f5;grid-column:1/-1}
-.btn:focus-visible{outline:3px solid var(--rose);outline-offset:2px}
-.foot{margin-top:18px;font-size:15px;color:#7a6168;text-align:center}
-@media print{body{background:#fff;padding:0}.actions,.foot,.fall{display:none}.card{box-shadow:none;width:148mm}}
+  font:700 16px/1.1 "Cormorant Garamond",serif;letter-spacing:.04em;font-variant-numeric:lining-nums;border:1.5px solid var(--gold);color:var(--page-ink);background:transparent}
+.btn.primary{background:linear-gradient(100deg,#9c7a32,#e6c472,#a8822f);color:#1a1210;border:0;grid-column:1/-1}
+body.light .btn{border-color:#5e2142;color:#5e2142}body.light .btn.primary{background:#5e2142;color:#fdf3f5}
+.btn:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.foot{margin-top:18px;font-size:15px;opacity:.7;text-align:center}
+
+/* ---------- envelope intro ---------- */
+.envelope{position:fixed;inset:0;z-index:50;display:grid;place-items:center;background:radial-gradient(circle at 50% 40%,#2a0d10,#0a0606 70%);cursor:pointer;transition:opacity .9s .9s}
+.env{position:relative;width:min(84vw,360px);aspect-ratio:1.45;perspective:900px}
+.env-body{position:absolute;inset:0;background:linear-gradient(160deg,#1b1413,#0d0909);border:1.5px solid #c9a14a;border-radius:6px;box-shadow:0 30px 60px #000a}
+.env-body::after{content:"";position:absolute;inset:0;background:linear-gradient(to top right,transparent 49.6%,#c9a14a66 50%,transparent 50.4%),linear-gradient(to top left,transparent 49.6%,#c9a14a66 50%,transparent 50.4%)}
+.env-flap{position:absolute;left:0;right:0;top:0;height:58%;transform-origin:top;transition:transform .8s cubic-bezier(.5,0,.3,1) .35s;z-index:2}
+.env-flap::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#241a18,#120d0c);clip-path:polygon(0 0,100% 0,50% 100%)}
+.env-flap::after{content:"";position:absolute;inset:0;background:#c9a14a;clip-path:polygon(0 0,100% 0,50% 100%,50% 97.5%,97% 1.5%,3% 1.5%,50% 97.5%,50% 100%)}
+.wax{position:absolute;left:50%;top:58%;width:23%;aspect-ratio:1;transform:translate(-50%,-50%);z-index:3;transition:transform .4s,opacity .4s;filter:drop-shadow(0 4px 6px #0008)}
+.env-cta{position:absolute;left:0;right:0;top:calc(100% + 22px);text-align:center;color:#e6c472;font:400 26px "Great Vibes",cursive;animation:breathe 2s ease-in-out infinite}
+@keyframes breathe{50%{opacity:.45}}
+.envelope.open .wax{transform:translate(-50%,-50%) scale(1.5);opacity:0}
+.envelope.open .env-flap{transform:rotateX(180deg)}
+.envelope.open .env{animation:sink 1s ease-in .9s forwards}
+.envelope.open{opacity:0;pointer-events:none}
+@keyframes sink{to{transform:translateY(40vh) scale(.9)}}
+@media (prefers-reduced-motion:reduce){.envelope{display:none}.branch,.lantern,.lantern svg,.name,.thread *{animation:none!important}}
+@media print{body{background:#fff;padding:0}.actions,.foot,.picker,.envelope{display:none}.card{box-shadow:none;width:148mm}}
 </style>
 </head>
 <body>
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <filter id="wc" x="-15%" y="-15%" width="130%" height="130%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" seed="7" result="n"/>
-      <feDisplacementMap in="SourceGraphic" in2="n" scale="3.5" xChannelSelector="R" yChannelSelector="G" result="d"/>
-      <feGaussianBlur in="d" stdDeviation="0.45" result="soft"/>
-      <feMorphology in="soft" operator="erode" radius="1.1" result="er"/>
-      <feComposite in="soft" in2="er" operator="out" result="edge"/>
-      <feFlood flood-color="#b8506f" flood-opacity=".35"/>
-      <feComposite in2="edge" operator="in" result="edgeTint"/>
-      <feMerge><feMergeNode in="soft"/><feMergeNode in="edgeTint"/></feMerge>
-    </filter>
-    <filter id="bleed" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9"/></filter>
-    <filter id="paper"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" seed="2"/><feColorMatrix values="0 0 0 0 .45  0 0 0 0 .3  0 0 0 0 .32  0 0 0 .55 0"/></filter>
-    <radialGradient id="pg" cx="50%" cy="85%" r="90%"><stop offset="0" stop-color="#e8849f"/><stop offset=".35" stop-color="#f6bccb"/><stop offset="1" stop-color="#fff1f4"/></radialGradient>
-    <radialGradient id="pg2" cx="50%" cy="85%" r="90%"><stop offset="0" stop-color="#f1a7ba"/><stop offset=".45" stop-color="#fbd7df"/><stop offset="1" stop-color="#fffafb"/></radialGradient>
-    <!-- notched sakura petal, base at origin, tip up -->
-    <path id="petal" d="M0 0 C -8 -4 -11 -15 -6 -22 L -1.2 -19.5 L 0 -22.5 L 1.2 -19.5 L 6 -22 C 11 -15 8 -4 0 0Z"/>
-    <g id="sakura">
-      <g fill="url(#pg)" stroke="#e39aad" stroke-width=".5">
-        <use href="#petal"/><use href="#petal" transform="rotate(72)"/><use href="#petal" transform="rotate(144)"/><use href="#petal" transform="rotate(216)"/><use href="#petal" transform="rotate(288)"/>
+<div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Open the invitation">
+  <div class="env">
+    <div class="env-body"></div>
+    <div class="env-flap"></div>
+    <svg class="wax" viewBox="-50 -50 100 100" aria-hidden="true">
+      <defs><radialGradient id="waxg" cx="40%" cy="35%"><stop offset="0" stop-color="#e2404c"/><stop offset=".6" stop-color="#a5121f"/><stop offset="1" stop-color="#6a0912"/></radialGradient></defs>
+      <path d="M0-46 C14-47 22-40 32-34 C44-27 47-14 46 0 C47 15 41 27 32 34 C22 42 12 47 0 46 C-14 47-24 41-33 34 C-43 25-47 13-46 0 C-47-14-42-26-33-34 C-23-42-13-46 0-46Z" fill="url(#waxg)"/>
+      <circle r="31" fill="none" stroke="#5c0810" stroke-width="2.5" opacity=".7"/>
+      <g fill="#f4c46a" opacity=".92">
+        <path d="M0 0 C-6-3-8-11-4.5-16 L-1-14 L0-16.5 L1-14 L4.5-16 C8-11 6-3 0 0Z"/>
+        <path transform="rotate(72)" d="M0 0 C-6-3-8-11-4.5-16 L-1-14 L0-16.5 L1-14 L4.5-16 C8-11 6-3 0 0Z"/>
+        <path transform="rotate(144)" d="M0 0 C-6-3-8-11-4.5-16 L-1-14 L0-16.5 L1-14 L4.5-16 C8-11 6-3 0 0Z"/>
+        <path transform="rotate(216)" d="M0 0 C-6-3-8-11-4.5-16 L-1-14 L0-16.5 L1-14 L4.5-16 C8-11 6-3 0 0Z"/>
+        <path transform="rotate(288)" d="M0 0 C-6-3-8-11-4.5-16 L-1-14 L0-16.5 L1-14 L4.5-16 C8-11 6-3 0 0Z"/>
+        <circle r="3" fill="#8a0d18"/>
       </g>
-      <circle r="3.2" fill="#c9466d"/>
-      <g stroke="#c9466d" stroke-width=".7" stroke-linecap="round">
-        <path d="M0 0 L0 -9M0 0 L7 -5M0 0 L6 6M0 0 L-6 6M0 0 L-7 -5M0 0 L4 -8M0 0 L-4 -8M0 0 L8 1M0 0 L-8 1"/>
-      </g>
-      <g fill="#b8862f"><circle cy="-9" r="1"/><circle cx="7" cy="-5" r="1"/><circle cx="6" cy="6" r="1"/><circle cx="-6" cy="6" r="1"/><circle cx="-7" cy="-5" r="1"/><circle cx="4" cy="-8" r=".9"/><circle cx="-4" cy="-8" r=".9"/><circle cx="8" cy="1" r=".9"/><circle cx="-8" cy="1" r=".9"/></g>
-    </g>
-    <g id="sakura2">
-      <g fill="url(#pg2)" stroke="#eab1bf" stroke-width=".5">
-        <use href="#petal"/><use href="#petal" transform="rotate(72)"/><use href="#petal" transform="rotate(144)"/><use href="#petal" transform="rotate(216)"/><use href="#petal" transform="rotate(288)"/>
-      </g>
-      <circle r="2.6" fill="#d9607f"/>
-      <g fill="#b8862f"><circle cy="-6" r=".9"/><circle cx="5.5" cy="-2" r=".9"/><circle cx="3.5" cy="5" r=".9"/><circle cx="-3.5" cy="5" r=".9"/><circle cx="-5.5" cy="-2" r=".9"/></g>
-    </g>
-    <!-- side view: half-open blossom -->
-    <g id="side">
-      <path d="M0 0 C -10 -6 -12 -18 -5 -24 L 0 -21 L 5 -24 C 12 -18 10 -6 0 0Z" fill="url(#pg2)" stroke="#eab1bf" stroke-width=".5"/>
-      <path d="M0 0 C -14 -2 -18 -12 -14 -18 C -8 -14 -4 -8 0 0Z" fill="url(#pg)" stroke="#e39aad" stroke-width=".5"/>
-      <path d="M0 0 C 14 -2 18 -12 14 -18 C 8 -14 4 -8 0 0Z" fill="url(#pg)" stroke="#e39aad" stroke-width=".5"/>
-      <path d="M-4 2 Q0 6 4 2 L0 -2Z" fill="#7a3b3b"/>
-    </g>
-    <g id="bud"><ellipse cx="0" cy="-5" rx="3.6" ry="5.6" fill="#ec8fa7"/><path d="M-3.6 -2 Q0 4 3.6 -2 L0 1Z" fill="#6e3a33"/></g>
-    <!-- branch: enters from top-left, runs right & down -->
-    <g id="branch">
-      <g filter="url(#bleed)" opacity=".55">
-        <ellipse cx="150" cy="60" rx="70" ry="34" fill="#f6c6d2"/><ellipse cx="60" cy="40" rx="55" ry="40" fill="#f9d5de"/>
-        <ellipse cx="250" cy="70" rx="55" ry="26" fill="#f8d2db"/><ellipse cx="100" cy="110" rx="30" ry="30" fill="#fbe0e6"/>
-      </g>
-      <g filter="url(#wc)">
-      <g fill="none" stroke="#4a2f2b" stroke-linecap="round">
-        <path d="M-10 18 C 40 30 90 34 150 58 C 200 78 250 82 300 76" stroke-width="7"/>
-        <path d="M150 58 C 175 50 205 30 228 22" stroke-width="3.6"/>
-        <path d="M80 36 C 90 60 96 85 92 118" stroke-width="4.2"/>
-        <path d="M92 100 C 80 115 66 128 52 142" stroke-width="2.4"/>
-        <path d="M230 80 C 252 96 268 112 280 132" stroke-width="2.6"/>
-        <path d="M30 26 C 30 10 40 0 52 -6" stroke-width="2.6"/>
-        <path d="M300 76 C 318 74 335 68 350 60" stroke-width="2.6"/>
-      </g>
-      <g fill="none" stroke="#6b4a40" stroke-width="1" opacity=".5"><path d="M0 16 C 40 28 90 32 150 55"/></g>
-      <use href="#sakura" transform="translate(150 58) rotate(10) scale(1.35)"/>
-      <use href="#sakura2" transform="translate(118 44) rotate(40) scale(1.05)"/>
-      <use href="#sakura" transform="translate(92 118) rotate(-10) scale(1.2)"/>
-      <use href="#sakura2" transform="translate(98 78) rotate(25) scale(.95)"/>
-      <use href="#side" transform="translate(52 142) rotate(200) scale(1)"/>
-      <use href="#sakura" transform="translate(228 22) rotate(30) scale(1.15)"/>
-      <use href="#sakura2" transform="translate(200 36) rotate(-15) scale(.9)"/>
-      <use href="#sakura" transform="translate(262 84) rotate(5) scale(1.1)"/>
-      <use href="#side" transform="translate(280 132) rotate(160) scale(.95)"/>
-      <use href="#sakura2" transform="translate(52 -6) rotate(10) scale(.95)"/>
-      <use href="#sakura" transform="translate(40 30) rotate(50) scale(1)"/>
-      <use href="#sakura2" transform="translate(320 70) rotate(0) scale(.85)"/>
-      <use href="#bud" transform="translate(350 60) rotate(70)"/>
-      <use href="#bud" transform="translate(186 54) rotate(160)"/>
-      <use href="#bud" transform="translate(70 128) rotate(220)"/>
-      <use href="#bud" transform="translate(245 70) rotate(-30)"/>
-      <use href="#bud" transform="translate(16 20) rotate(-60)"/>
-      <!-- loose petals -->
-      <g fill="#f6bccb" opacity=".9">
-        <use href="#petal" transform="translate(170 110) rotate(40) scale(.45)"/>
-        <use href="#petal" transform="translate(130 150) rotate(120) scale(.4)"/>
-        <use href="#petal" transform="translate(310 110) rotate(200) scale(.42)"/>
-      </g>
-      <use href="#sakura2" transform="translate(172 74) rotate(60) scale(1)"/>
-      <use href="#sakura" transform="translate(130 70) rotate(-30) scale(.9)"/>
-      <use href="#sakura2" transform="translate(70 22) rotate(15) scale(1.1)"/>
-      <use href="#sakura" transform="translate(12 50) rotate(80) scale(1.15)"/>
-      <use href="#sakura2" transform="translate(290 92) rotate(35) scale(.95)"/>
-      <use href="#side" transform="translate(205 92) rotate(170) scale(.8)"/>
-      <use href="#bud" transform="translate(112 22) rotate(-20)"/>
-      </g>
-    </g>
-  </defs>
-</svg>
+    </svg>
+    <div class="env-cta">Tap to open</div>
+  </div>
+</div>
 
-<main class="card" aria-label="Barat invitation card">
+<section class="picker" aria-label="Choose a design">
+  <h1>Choose your design</h1>
+  <p>Five designs, same invitation. Tap one to see it come alive.</p>
+  <div class="chips" id="chips"></div>
+  <div class="blurb" id="blurb"></div>
+</section>
+
+<!-- per-theme blossom defs are written here by script -->
+<svg id="defs" width="0" height="0" style="position:absolute" aria-hidden="true"></svg>
+
+<main class="card" id="card" data-theme="midnight" aria-label="Barat invitation card">
+  <svg class="layer grain" aria-hidden="true"><filter id="paper"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" seed="2"/><feColorMatrix values="0 0 0 0 .5  0 0 0 0 .4  0 0 0 0 .35  0 0 0 .55 0"/></filter><rect width="100%" height="100%" filter="url(#paper)"/></svg>
+
+  <!-- lacquer extras -->
+  <svg class="extra x-lacquer seigaiha" aria-hidden="true">
+    <defs><pattern id="wave" width="24" height="12" patternUnits="userSpaceOnUse">
+      <g fill="none" stroke="#f2c766" stroke-width="1"><circle cx="12" cy="12" r="11"/><circle cx="12" cy="12" r="7.5"/><circle cx="12" cy="12" r="4"/>
+      <circle cx="0" cy="6" r="11"/><circle cx="0" cy="6" r="7.5"/><circle cx="0" cy="6" r="4"/><circle cx="24" cy="6" r="11"/><circle cx="24" cy="6" r="7.5"/><circle cx="24" cy="6" r="4"/></g>
+    </pattern></defs>
+    <rect width="100%" height="100%" fill="url(#wave)"/>
+  </svg>
+  <div class="extra x-lacquer layer" id="lanterns" aria-hidden="true"></div>
+
+  <canvas class="layer air" id="air" aria-hidden="true"></canvas>
+
   <svg class="branch tl" viewBox="-12 -32 380 190" aria-hidden="true"><use href="#branch"/></svg>
   <svg class="branch br" viewBox="-12 -32 380 190" aria-hidden="true"><use href="#branch"/></svg>
 
-  <svg style="position:absolute;inset:0;width:100%;height:100%;mix-blend-mode:multiply;opacity:.22;pointer-events:none" aria-hidden="true"><rect width="100%" height="100%" filter="url(#paper)"/></svg>
-  <!-- gold arch frame -->
   <svg class="frame" viewBox="0 0 92 133" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M2 131 V26 C 2 12 26 4 46 1 C 66 4 90 12 90 26 V131 Z" fill="none" stroke="#a8834a" stroke-width="1.4" vector-effect="non-scaling-stroke"/>
-    <path d="M3.6 129.4 V26.6 C 3.6 14 26.5 6 46 2.6 C 65.5 6 88.4 14 88.4 26.6 V129.4 Z" fill="none" stroke="#e4b9c4" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    <path d="M2 131 V26 C 2 12 26 4 46 1 C 66 4 90 12 90 26 V131 Z" fill="none" style="stroke:var(--f1)" stroke-width="1.4" vector-effect="non-scaling-stroke"/>
+    <path d="M3.6 129.4 V26.6 C 3.6 14 26.5 6 46 2.6 C 65.5 6 88.4 14 88.4 26.6 V129.4 Z" fill="none" style="stroke:var(--f2)" stroke-width="1" vector-effect="non-scaling-stroke"/>
   </svg>
 
-  <div class="petal-fall" aria-hidden="true">
-    <svg class="fall" style="left:30%;animation-duration:11s;animation-delay:0s" viewBox="-8 -24 16 26"><use href="#petal" fill="#f4b3c3"/></svg>
-    <svg class="fall" style="left:62%;animation-duration:14s;animation-delay:3s" viewBox="-8 -24 16 26"><use href="#petal" fill="#f8cad5"/></svg>
-    <svg class="fall" style="left:85%;animation-duration:12s;animation-delay:6s" viewBox="-8 -24 16 26"><use href="#petal" fill="#f1a7ba"/></svg>
-    <svg class="fall" style="left:48%;animation-duration:16s;animation-delay:9s" viewBox="-8 -24 16 26"><use href="#petal" fill="#f6bccb"/></svg>
-  </div>
+  <!-- thread: the red string of fate, groom's ring → heart knot at the arch → bride's ring -->
+  <svg class="extra x-thread thread" viewBox="0 0 100 141" aria-hidden="true">
+    <path class="rest" d="M7.5 46 V137 H92.5 V68"/>
+    <path class="rest" d="M9 47 V135.5 H91 V69" opacity=".5"/>
+    <path class="string" pathLength="1" d="M22.4 52.8 C 15 53.2 7.5 51 7.5 44 L7.5 28 C7.5 18 28 12.5 50 10.2 C 47 8.6 43.6 6 45 3.6 C 46.3 1.6 49.2 2 50 4.6 C 50.8 2 53.7 1.6 55 3.6 C 56.4 6 53 8.6 50 10.2 C 72 12.5 92.5 18 92.5 28 L92.5 66 C92.5 73 86 74.6 74.6 74.6"/>
+    <g class="heart"><path d="M50 10.2 C 47 8.6 43.6 6 45 3.6 C 46.3 1.6 49.2 2 50 4.6 C 50.8 2 53.7 1.6 55 3.6 C 56.4 6 53 8.6 50 10.2Z" fill="#d8283a" opacity=".25"/></g>
+    <circle class="ring r1" cx="23.2" cy="52.8" r=".9"/>
+    <circle class="ring r2" cx="73.8" cy="74.6" r=".9"/>
+  </svg>
+
+  <!-- breeze: red hanko seal with a blossom -->
+  <svg class="extra x-breeze seal" viewBox="-50 -50 100 100" aria-hidden="true">
+    <defs><filter id="ink"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="5"/><feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -.9 1.25"/><feComposite in="SourceGraphic" operator="in"/></filter></defs>
+    <g filter="url(#ink)">
+      <rect x="-44" y="-44" width="88" height="88" rx="14" fill="#c41e2e"/>
+      <rect x="-37" y="-37" width="74" height="74" rx="9" fill="none" stroke="#1a0d0c" stroke-width="3" opacity=".25"/>
+      <g fill="#140c0b" transform="scale(1.45)">
+        <path d="M0 0 C-6-3-8-11-4.5-16 L-1-14 L0-16.5 L1-14 L4.5-16 C8-11 6-3 0 0Z"/>
+        <path transform="rotate(72)" d="M0 0 C-6-3-8-11-4.5-16 L-1-14 L0-16.5 L1-14 L4.5-16 C8-11 6-3 0 0Z"/>
+        <path transform="rotate(144)" d="M0 0 C-6-3-8-11-4.5-16 L-1-14 L0-16.5 L1-14 L4.5-16 C8-11 6-3 0 0Z"/>
+        <path transform="rotate(216)" d="M0 0 C-6-3-8-11-4.5-16 L-1-14 L0-16.5 L1-14 L4.5-16 C8-11 6-3 0 0Z"/>
+        <path transform="rotate(288)" d="M0 0 C-6-3-8-11-4.5-16 L-1-14 L0-16.5 L1-14 L4.5-16 C8-11 6-3 0 0Z"/>
+        <circle r="3.2" fill="#c41e2e"/>
+      </g>
+    </g>
+  </svg>
 
   <div class="content">
     <div>
@@ -196,7 +247,7 @@ body{background:var(--page);color:var(--ink);font-family:"Cormorant Garamond",Ge
     </div>
     <div>
       <p class="lede">You are cordially invited to the</p>
-      <div class="walima">Barat Ceremony</div>
+      <div class="event">Barat Ceremony</div>
     </div>
     <div class="names">
       <div class="name">Huzifa Rasheed</div>
@@ -210,6 +261,7 @@ body{background:var(--page);color:var(--ink);font-family:"Cormorant Garamond",Ge
         <div class="day">14</div>
         <div class="side">Nov · 2026</div>
       </div>
+      <div class="time">12:00 PM<span>—</span>4:00 PM</div>
     </div>
     <div class="venue-row">
       <div class="venue">
@@ -234,11 +286,137 @@ body{background:var(--page);color:var(--ink);font-family:"Cormorant Garamond",Ge
 
 <nav class="actions" aria-label="Invitation actions">
   <a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=Al+Firdous+Marriage+Hall%2C+Lehtrar+Road%2C+Sanam+Chowk%2C+Islamabad">Directions to the venue</a>
-  <a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Barat%20%E2%80%93%20Huzifa%20Rasheed&dates=20261114/20261115&location=Al%20Firdous%20Marriage%20Hall%2C%20Lehtrar%20Road%2C%20Islamabad">Add to calendar</a>
-  <a class="btn" href="card.png" download="barat-invite.png">Save card</a>
+  <a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Barat%20%E2%80%93%20Huzifa%20Rasheed&dates=20261114T070000Z/20261114T110000Z&location=Al%20Firdous%20Marriage%20Hall%2C%20Lehtrar%20Road%2C%20Islamabad">Add to calendar</a>
+  <a class="btn" id="save" href="card-midnight.png" download="barat-invite.png">Save card</a>
   <a class="btn" href="tel:+923345121715">Call 0334-5121715</a>
   <a class="btn" href="tel:+923315080499">Call 0331-5080499</a>
 </nav>
 <p class="foot">With love and duas · 14 November 2026</p>
+
+<script>
+// One palette per design. Blossom art is the same drawing, recoloured.
+const THEMES = {
+  midnight:{label:"Midnight Sakura", sw:"radial-gradient(circle at 35% 35%,#e2303f 0 22%,#c9a14a 23% 32%,#0b0808 33%)",
+    blurb:"Black lacquer night. Gold branches, red blossoms, petals carried off on the wind.",
+    p:{c:"#6e0a16",m:"#c4202f",e:"#f06b6b",c2:"#8a1220",m2:"#d9404a",e2:"#f59a8f",s1:"#e3b75e",s2:"#d4a24c",ctr:"#f2cf75",stm:"#e9c46a",ant:"#fff0b8",br:"#c9a14a",bud:"#d02a3a",budb:"#c9a14a",edge:"#ffd27a",w:["#8a0f1c","#5a0a14","#7a1020","#3a0a0e"],wo:.5},
+    air:{petals:34,colors:["#c4202f","#e2404c","#9a1422","#f06b6b"],dust:40,streaks:0,curl:.6}},
+  lacquer:{label:"Crimson Lantern", sw:"radial-gradient(circle at 35% 35%,#f2c766 0 22%,#120808 23% 32%,#8e1220 33%)",
+    blurb:"Red lacquer box, ink-black branches, golden blossoms and paper lanterns rising into the sky.",
+    p:{c:"#8a5a12",m:"#d9a640",e:"#fbe7a8",c2:"#a87822",m2:"#e8c063",e2:"#fff4cf",s1:"#6b4a10",s2:"#8a6420",ctr:"#3a1408",stm:"#3a1408",ant:"#1a0a04",br:"#140909",bud:"#e8b84a",budb:"#140909",edge:"#5a3a08",w:["#2a0306","#3a0508","#2a0306","#4a0a0e"],wo:.45},
+    air:{petals:18,colors:["#f2c766","#e8b84a","#fff0c2"],dust:30,streaks:0,curl:.4}},
+  thread:{label:"Red Thread", sw:"radial-gradient(circle at 50% 50%,#0b0808 0 30%,#d8283a 31% 40%,#0b0808 41% 60%,#c9a14a 61% 66%,#0b0808 67%)",
+    blurb:"The old Japanese legend: an invisible red thread ties two people destined to meet. Watch it tie these two names, with a heart at the top.",
+    p:null, air:{petals:14,colors:["#d8283a","#a5121f","#f06b6b"],dust:46,streaks:0,curl:.4}},
+  breeze:{label:"Golden Breeze", sw:"linear-gradient(135deg,#0b0808 0 30%,#c9a14a 31% 36%,#0b0808 37% 55%,#c41e2e 56% 62%,#0b0808 63%)",
+    blurb:"You can see the air. Gold wind currents sweep across the card and carry red petals away from the branch.",
+    p:null, air:{petals:30,colors:["#c4202f","#e2404c","#9a1422"],dust:24,streaks:20,curl:.9}},
+  blush:{label:"Blush Sakura", sw:"radial-gradient(circle at 35% 35%,#e8849f 0 24%,#a8834a 25% 32%,#fdf8f4 33%)",
+    blurb:"The original: soft pink blossoms on ivory paper.",
+    p:{c:"#e8849f",m:"#f6bccb",e:"#fff1f4",c2:"#f1a7ba",m2:"#fbd7df",e2:"#fffafb",s1:"#e39aad",s2:"#eab1bf",ctr:"#c9466d",stm:"#c9466d",ant:"#b8862f",br:"#4a2f2b",bud:"#ec8fa7",budb:"#6e3a33",edge:"#b8506f",w:["#f6c6d2","#f9d5de","#f8d2db","#fbe0e6"],wo:.55},
+    air:{petals:16,colors:["#f6bccb","#f1a7ba","#fbd7df"],dust:0,streaks:0,curl:.5}}
+};
+THEMES.thread.p = THEMES.midnight.p; THEMES.breeze.p = THEMES.midnight.p;
+
+const PETAL = "M0 0 C -8 -4 -11 -15 -6 -22 L -1.2 -19.5 L 0 -22.5 L 1.2 -19.5 L 6 -22 C 11 -15 8 -4 0 0Z";
+const ring5 = id => [0,72,144,216,288].map(r=>`<use href="#${id}" transform="rotate(${r})"/>`).join("");
+function defs(p){
+  const anth = [[0,-9],[7,-5],[6,6],[-6,6],[-7,-5],[4,-8],[-4,-8],[8,1],[-8,1]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="1"/>`).join("");
+  const B = (t,s,id="sakura")=>`<use href="#${id}" transform="${t} scale(${s})"/>`;
+  return `<defs>
+  <filter id="wc" x="-15%" y="-15%" width="130%" height="130%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.5" xChannelSelector="R" yChannelSelector="G" result="d"/><feGaussianBlur in="d" stdDeviation="0.45" result="soft"/><feMorphology in="soft" operator="erode" radius="1.1" result="er"/><feComposite in="soft" in2="er" operator="out" result="edge"/><feFlood flood-color="${p.edge}" flood-opacity=".4"/><feComposite in2="edge" operator="in" result="tint"/><feMerge><feMergeNode in="soft"/><feMergeNode in="tint"/></feMerge></filter>
+  <filter id="bleed" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9"/></filter>
+  <radialGradient id="pg" cx="50%" cy="85%" r="90%"><stop offset="0" stop-color="${p.c}"/><stop offset=".38" stop-color="${p.m}"/><stop offset="1" stop-color="${p.e}"/></radialGradient>
+  <radialGradient id="pg2" cx="50%" cy="85%" r="90%"><stop offset="0" stop-color="${p.c2}"/><stop offset=".45" stop-color="${p.m2}"/><stop offset="1" stop-color="${p.e2}"/></radialGradient>
+  <linearGradient id="brg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${p.br}"/><stop offset=".5" stop-color="${p.br === '#c9a14a' ? '#f3d98b' : p.br}"/><stop offset="1" stop-color="${p.br}"/></linearGradient>
+  <path id="petal" d="${PETAL}"/>
+  <g id="sakura"><g fill="url(#pg)" stroke="${p.s1}" stroke-width=".55">${ring5("petal")}</g><circle r="3.2" fill="${p.ctr}"/>
+    <g stroke="${p.stm}" stroke-width=".7" stroke-linecap="round"><path d="M0 0 L0 -9M0 0 L7 -5M0 0 L6 6M0 0 L-6 6M0 0 L-7 -5M0 0 L4 -8M0 0 L-4 -8M0 0 L8 1M0 0 L-8 1"/></g><g fill="${p.ant}">${anth}</g></g>
+  <g id="sakura2"><g fill="url(#pg2)" stroke="${p.s2}" stroke-width=".5">${ring5("petal")}</g><circle r="2.6" fill="${p.ctr}"/>
+    <g fill="${p.ant}"><circle cy="-6" r=".9"/><circle cx="5.5" cy="-2" r=".9"/><circle cx="3.5" cy="5" r=".9"/><circle cx="-3.5" cy="5" r=".9"/><circle cx="-5.5" cy="-2" r=".9"/></g></g>
+  <g id="side"><path d="M0 0 C -10 -6 -12 -18 -5 -24 L 0 -21 L 5 -24 C 12 -18 10 -6 0 0Z" fill="url(#pg2)" stroke="${p.s2}" stroke-width=".5"/>
+    <path d="M0 0 C -14 -2 -18 -12 -14 -18 C -8 -14 -4 -8 0 0Z" fill="url(#pg)" stroke="${p.s1}" stroke-width=".5"/><path d="M0 0 C 14 -2 18 -12 14 -18 C 8 -14 4 -8 0 0Z" fill="url(#pg)" stroke="${p.s1}" stroke-width=".5"/><path d="M-4 2 Q0 6 4 2 L0 -2Z" fill="${p.budb}"/></g>
+  <g id="bud"><ellipse cx="0" cy="-5" rx="3.6" ry="5.6" fill="${p.bud}"/><path d="M-3.6 -2 Q0 4 3.6 -2 L0 1Z" fill="${p.budb}"/></g>
+  <g id="branch">
+    <g filter="url(#bleed)" opacity="${p.wo}"><ellipse cx="150" cy="60" rx="70" ry="34" fill="${p.w[0]}"/><ellipse cx="60" cy="40" rx="55" ry="40" fill="${p.w[1]}"/><ellipse cx="250" cy="70" rx="55" ry="26" fill="${p.w[2]}"/><ellipse cx="100" cy="110" rx="30" ry="30" fill="${p.w[3]}"/></g>
+    <g filter="url(#wc)">
+      <g fill="none" stroke="url(#brg)" stroke-linecap="round">
+        <path d="M-10 18 C 40 30 90 34 150 58 C 200 78 250 82 300 76" stroke-width="7"/><path d="M150 58 C 175 50 205 30 228 22" stroke-width="3.6"/>
+        <path d="M80 36 C 90 60 96 85 92 118" stroke-width="4.2"/><path d="M92 100 C 80 115 66 128 52 142" stroke-width="2.4"/>
+        <path d="M230 80 C 252 96 268 112 280 132" stroke-width="2.6"/><path d="M30 26 C 30 10 40 0 52 -6" stroke-width="2.6"/><path d="M300 76 C 318 74 335 68 350 60" stroke-width="2.6"/>
+      </g>
+      ${B("translate(150 58) rotate(10)",1.35)}${B("translate(118 44) rotate(40)",1.05,"sakura2")}${B("translate(92 118) rotate(-10)",1.2)}${B("translate(98 78) rotate(25)",.95,"sakura2")}
+      ${B("translate(52 142) rotate(200)",1,"side")}${B("translate(228 22) rotate(30)",1.15)}${B("translate(200 36) rotate(-15)",.9,"sakura2")}${B("translate(262 84) rotate(5)",1.1)}
+      ${B("translate(280 132) rotate(160)",.95,"side")}${B("translate(52 -6) rotate(10)",.95,"sakura2")}${B("translate(40 30) rotate(50)",1)}${B("translate(320 70) rotate(0)",.85,"sakura2")}
+      ${B("translate(350 60) rotate(70)",1,"bud")}${B("translate(186 54) rotate(160)",1,"bud")}${B("translate(70 128) rotate(220)",1,"bud")}${B("translate(245 70) rotate(-30)",1,"bud")}${B("translate(16 20) rotate(-60)",1,"bud")}
+      ${B("translate(172 74) rotate(60)",1,"sakura2")}${B("translate(130 70) rotate(-30)",.9)}${B("translate(70 22) rotate(15)",1.1,"sakura2")}${B("translate(12 50) rotate(80)",1.15)}
+      ${B("translate(290 92) rotate(35)",.95,"sakura2")}${B("translate(205 92) rotate(170)",.8,"side")}${B("translate(112 22) rotate(-20)",1,"bud")}
+    </g>
+  </g></defs>`;
+}
+
+// Lanterns for the lacquer design: negative delays spread them across the sky.
+const lanternSVG = `<svg viewBox="0 0 40 64"><line x1="20" y1="0" x2="20" y2="7" stroke="#2a1206" stroke-width="1.4"/>
+  <rect x="11" y="6" width="18" height="5" rx="1.5" fill="#1a0a05"/><rect x="11" y="53" width="18" height="5" rx="1.5" fill="#1a0a05"/>
+  <ellipse cx="20" cy="32" rx="17" ry="22" fill="#ff9d3a"/><ellipse cx="20" cy="32" rx="17" ry="22" fill="url(#lg)"/>
+  <g stroke="#a3360f" stroke-width=".8" fill="none" opacity=".55"><ellipse cx="20" cy="32" rx="9" ry="22"/><path d="M3 22 H37 M3 32 H37 M3 42 H37"/></g>
+  <line x1="20" y1="58" x2="20" y2="64" stroke="#e8b84a" stroke-width="1.6"/>
+  <defs><radialGradient id="lg" cx="50%" cy="45%"><stop offset="0" stop-color="#fff2c4" stop-opacity=".95"/><stop offset=".6" stop-color="#ff7a2a" stop-opacity=".35"/><stop offset="1" stop-color="#b8160e" stop-opacity=".9"/></radialGradient></defs></svg>`;
+document.getElementById("lanterns").innerHTML = [[4,26,-4,1],[88,32,-15,.8],[11,30,-22,.7],[91,24,-9,.95],[2,36,-30,.6]]
+  .map(([l,d,dl,s])=>`<div class="lantern" style="left:${l}cqw;animation-duration:${d}s;animation-delay:${dl}s;scale:${s}">${lanternSVG}</div>`).join("");
+
+// ---------- the wind: a flow field that moves petals, gold dust and visible air currents ----------
+const card = document.getElementById("card"), cv = document.getElementById("air"), ctx = cv.getContext("2d");
+const petalPath = new Path2D(PETAL);
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+let W=0,H=0,cfg,petals=[],dust=[],streaks=[],t=0;
+const rnd=(a,b)=>a+Math.random()*(b-a);
+function size(){const r=card.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);W=r.width;H=r.height;cv.width=W*d;cv.height=H*d;ctx.setTransform(d,0,0,d,0,0)}
+const gust = t => Math.pow(Math.max(0,Math.sin(t*.33)),3);
+function wind(x,y,t){const u=x/W,v=y/H,g=gust(t),c=cfg.curl;
+  return [W*(.035+.07*g+.02*c*Math.sin(v*6+t*.7)), H*(.012+.03*c*Math.sin(u*4.2+v*3+t*.55)-.012*g*Math.sin(u*3+t))]}
+function spawnPetal(p,anywhere){p.x=anywhere?rnd(0,W):rnd(-.15*W,.45*W);p.y=anywhere?rnd(0,H):rnd(-.12*H,.14*H);
+  p.z=rnd(.55,1.25);p.r=rnd(0,6.3);p.vr=rnd(-1.6,1.6);p.f=rnd(0,6.3);p.vf=rnd(1.5,4);p.ph=rnd(0,6.3);p.col=cfg.colors[Math.random()*cfg.colors.length|0];return p}
+function spawnStreak(s,anywhere){s.x=anywhere?rnd(0,W):rnd(-.2*W,0);s.y=rnd(0,H);s.h=[];s.sp=rnd(.7,1.2);s.ph=rnd(0,6.3);return s}
+function reset(){petals=Array.from({length:cfg.petals},()=>spawnPetal({},true));
+  dust=Array.from({length:cfg.dust},()=>({x:rnd(0,W),y:rnd(0,H),s:rnd(.6,1.8),ph:rnd(0,6.3)}));
+  streaks=Array.from({length:cfg.streaks},()=>spawnStreak({},true))}
+function step(dt){t+=dt;const g=gust(t);
+  for(const p of petals){const [vx,vy]=wind(p.x,p.y,t);p.x+=(vx*p.z+Math.sin(t*1.3+p.ph)*W*.012)*dt;p.y+=(vy*p.z+H*.018*p.z)*dt;
+    p.r+=p.vr*dt*(1+2*g);p.f+=p.vf*dt;if(p.x>W*1.08||p.y>H*1.05)spawnPetal(p,false)}
+  for(const d of dust){const [vx,vy]=wind(d.x,d.y,t);d.x+=vx*.25*dt;d.y+=(vy*.2-H*.01)*dt;if(d.x>W)d.x-=W;if(d.y<0)d.y+=H;if(d.y>H)d.y-=H}
+  for(const s of streaks){const v=s.y/H,u=s.x/W;s.x+=W*(.16+.12*g)*s.sp*dt;s.y+=H*.05*Math.sin(u*5+v*2+t*.8+s.ph)*s.sp*dt;s.h.push([s.x,s.y]);if(s.h.length>46)s.h.shift();if(s.x>W*1.15)spawnStreak(s,false)}}
+const calm=x=>.22+.78*Math.min(1,Math.abs(x/W-.5)*3.2);
+function draw(){ctx.clearRect(0,0,W,H);const u=W/100;
+  ctx.lineCap="round";
+  for(const s of streaks){const h=s.h;for(let i=1;i<h.length;i++){ctx.strokeStyle=`rgba(232,196,112,${(i/h.length)*.7*calm(h[i][0])})`;ctx.lineWidth=u*.32*(i/h.length);
+    ctx.beginPath();ctx.moveTo(h[i-1][0],h[i-1][1]);ctx.lineTo(h[i][0],h[i][1]);ctx.stroke()}}
+  for(const d of dust){const a=.35+.45*Math.sin(t*2+d.ph);ctx.fillStyle=`rgba(240,205,120,${Math.max(0,a)})`;ctx.beginPath();ctx.arc(d.x,d.y,d.s*u*.18,0,7);ctx.fill()}
+  for(const p of petals){const k=p.z*u*.11,fl=Math.cos(p.f);ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.r);ctx.scale(k*(.15+.85*Math.abs(fl)),k);
+    ctx.globalAlpha=(.55+.4*p.z/1.25)*calm(p.x);ctx.fillStyle=p.col;ctx.fill(petalPath);if(fl<0){ctx.fillStyle="rgba(0,0,0,.18)";ctx.fill(petalPath)}ctx.restore()}
+  ctx.globalAlpha=1}
+let last=0;
+function loop(ts){const dt=Math.min(.05,(ts-last)/1000||0);last=ts;step(dt);draw();requestAnimationFrame(loop)}
+
+// ---------- picker ----------
+const chips=document.getElementById("chips"), blurb=document.getElementById("blurb"), save=document.getElementById("save"), defsEl=document.getElementById("defs");
+chips.innerHTML=Object.entries(THEMES).map(([k,v])=>`<button class="chip" data-k="${k}" aria-pressed="false"><span class="sw" style="background:${v.sw}"></span>${v.label}</button>`).join("");
+function setTheme(k){if(!THEMES[k])k="midnight";const th=THEMES[k];card.dataset.theme=k;defsEl.innerHTML=defs(th.p);
+  document.body.classList.toggle("light",k==="blush");
+  chips.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",c.dataset.k===k));
+  blurb.textContent=th.blurb;save.href=`card-${k}.png`;save.download=`barat-invite-${k}.png`;
+  card.querySelectorAll(".thread .string,.thread .ring").forEach(e=>{e.style.animation="none";e.offsetWidth;e.style.animation=""});
+  cfg=th.air;size();reset();for(let i=0;i<120;i++)step(1/30);draw();
+  try{history.replaceState(null,"","#"+k)}catch(e){}}
+chips.addEventListener("click",e=>{const b=e.target.closest(".chip");if(b)setTheme(b.dataset.k)});
+new ResizeObserver(()=>{size();draw()}).observe(card);
+setTheme(location.hash.slice(1));
+if(!reduce)requestAnimationFrame(loop);
+
+// ---------- envelope: once per visit ----------
+const env=document.getElementById("envelope");
+let seen=false;try{seen=sessionStorage.getItem("env")==="1"}catch(e){}
+if(seen||reduce)env.remove();else{const open=()=>{env.classList.add("open");try{sessionStorage.setItem("env","1")}catch(e){}setTimeout(()=>env.remove(),2000)};
+  env.addEventListener("click",open);env.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();open()}})}
+</script>
 </body>
 </html>
