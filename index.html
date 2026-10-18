@@ -242,57 +242,75 @@ body.light .btn{border-color:#5e2142;color:#5e2142}body.light .btn.primary{backg
 
   <div class="content">
     <div>
-      <div class="bism" lang="ar">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
-      <div class="salam">Assalam-o-Alaikum</div>
+      <div class="bism" lang="ar" data-f="greeting_ar"></div>
+      <div class="salam" data-f="salam"></div>
     </div>
     <div>
-      <p class="lede">You are cordially invited to the</p>
-      <div class="event">Barat Ceremony</div>
+      <p class="lede" data-f="lede"></p>
+      <div class="event" data-f="event"></div>
     </div>
     <div class="names">
-      <div class="name">Huzifa Rasheed</div>
+      <div class="name" data-f="name_1"></div>
       <div class="amp">&amp;</div>
-      <div class="bride">Daughter of</div>
-      <div class="name">Badshah Umar</div>
+      <div class="bride" data-f="name_2_prefix"></div>
+      <div class="name" data-f="name_2"></div>
     </div>
     <div class="when">
       <div class="date">
-        <div class="side">Saturday</div>
-        <div class="day">14</div>
-        <div class="side">Nov · 2026</div>
+        <div class="side" data-f="weekday"></div>
+        <div class="day" data-f="day"></div>
+        <div class="side" data-f="monthyear"></div>
       </div>
-      <div class="time">12:00 PM<span>—</span>4:00 PM</div>
+      <div class="time"><b data-f="t1"></b><span>—</span><b data-f="t2"></b></div>
     </div>
     <div class="venue-row">
       <div class="venue">
         <small>Venue</small>
-        <strong>Al Firdous Marriage Hall</strong>
-        Main Lehtrar Road, near Sanam Chowk, Islamabad
+        <strong data-f="venue_name"></strong>
+        <span data-f="venue_address"></span>
       </div>
       <div class="qr">
-        <a href="https://www.google.com/maps/search/?api=1&query=Al+Firdous+Marriage+Hall%2C+Lehtrar+Road%2C+Sanam+Chowk%2C+Islamabad" aria-label="Open venue in Google Maps"><img src="qr.svg" alt="QR code to the venue on Google Maps"></a>
+        <a data-href="maps" aria-label="Open venue in Google Maps"><img src="qr.svg" alt="QR code to the venue on Google Maps"></a>
         Scan for map
       </div>
     </div>
     <div>
       <div class="rsvp">
         <small>RSVP</small>
-        <a href="tel:+923345121715">0334-5121715</a> &nbsp;|&nbsp; <a href="tel:+923315080499">0331-5080499</a>
+        <span id="rsvp"></span>
       </div>
-      <div class="close">Looking forward to seeing you!</div>
+      <div class="close" data-f="closing"></div>
     </div>
   </div>
 </main>
 
-<nav class="actions" aria-label="Invitation actions">
-  <a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=Al+Firdous+Marriage+Hall%2C+Lehtrar+Road%2C+Sanam+Chowk%2C+Islamabad">Directions to the venue</a>
-  <a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Barat%20%E2%80%93%20Huzifa%20Rasheed&dates=20261114T070000Z/20261114T110000Z&location=Al%20Firdous%20Marriage%20Hall%2C%20Lehtrar%20Road%2C%20Islamabad">Add to calendar</a>
-  <a class="btn" id="save" href="card-midnight.png" download="barat-invite.png">Save card</a>
-  <a class="btn" href="tel:+923345121715">Call 0334-5121715</a>
-  <a class="btn" href="tel:+923315080499">Call 0331-5080499</a>
+<nav class="actions" aria-label="Invitation actions" id="actions">
+  <a class="btn primary" data-href="maps">Directions to the venue</a>
+  <a class="btn" data-href="calendar">Add to calendar</a>
+  <a class="btn" id="save" href="card-midnight.png" download="invite.png">Save card</a>
 </nav>
-<p class="foot">With love and duas · 14 November 2026</p>
+<p class="foot" id="foot"></p>
 
+<script src="invite.js"></script>
+<script>
+// Fill the card from invite.js.
+(()=>{const I=window.INVITE,$=s=>document.querySelectorAll(s);
+  const d=new Date(I.date+"T12:00:00"),t12=hm=>{let[h,m]=hm.split(":").map(Number);return `${(h%12)||12}:${String(m).padStart(2,"0")} ${h<12?"AM":"PM"}`};
+  const utc=hm=>new Date(`${I.date}T${hm}:00${I.utc_offset}`).toISOString().replace(/[-:]|\.\d{3}/g,"");
+  const tel=n=>"tel:+92"+n.replace(/\D/g,"").replace(/^0/,"");
+  const F={...I,weekday:d.toLocaleDateString("en-GB",{weekday:"long"}),day:d.getDate(),
+    monthyear:d.toLocaleDateString("en-GB",{month:"short"})+" · "+d.getFullYear(),t1:t12(I.time_start),t2:t12(I.time_end)};
+  $("[data-f]").forEach(e=>e.textContent=F[e.dataset.f]);
+  const H={maps:"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(I.maps_query),
+    calendar:"https://calendar.google.com/calendar/render?action=TEMPLATE&text="+encodeURIComponent(`${I.event} – ${I.name_1}`)+
+      `&dates=${utc(I.time_start)}/${utc(I.time_end)}&location=`+encodeURIComponent(I.venue_name+", "+I.venue_address)};
+  $("[data-href]").forEach(e=>e.href=H[e.dataset.href]);
+  document.getElementById("rsvp").innerHTML=I.rsvp.map(n=>`<a href="${tel(n)}">${n}</a>`).join(" &nbsp;|&nbsp; ");
+  document.getElementById("actions").insertAdjacentHTML("beforeend",I.rsvp.map(n=>`<a class="btn" href="${tel(n)}">Call ${n}</a>`).join(""));
+  document.getElementById("foot").textContent="With love and duas · "+d.toLocaleDateString("en-GB",{day:"numeric",month:"long",year:"numeric"});
+  document.title=`${I.event.split(" ")[0]} Invitation`;
+})();
+</script>
 <script>
 // One palette per design. Blossom art is the same drawing, recoloured.
 const THEMES = {
@@ -409,7 +427,7 @@ function setTheme(k){if(!THEMES[k])k="midnight";const th=THEMES[k];card.dataset.
   try{history.replaceState(null,"","#"+k)}catch(e){}}
 chips.addEventListener("click",e=>{const b=e.target.closest(".chip");if(b)setTheme(b.dataset.k)});
 new ResizeObserver(()=>{size();draw()}).observe(card);
-setTheme(location.hash.slice(1));
+setTheme(location.hash.slice(1)||window.INVITE.theme);
 if(!reduce)requestAnimationFrame(loop);
 
 // ---------- envelope: once per visit ----------
