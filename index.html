@@ -55,7 +55,7 @@ body.light{--page:#f3e6e6;--page-ink:#3b2a31;--chip:#fffafa;background-image:rad
   --box:#0000004d;--boxline:#c9a14a59;--f1:#c9a14a;--f2:#7d1520;--grain:.3;--blend:soft-light}
 .card[data-theme="blush"]{--bg:#fdf8f4;
   --wash:radial-gradient(ellipse 65% 45% at 50% 50%,#fff 0,transparent 70%),radial-gradient(ellipse 55% 30% at 0% 0%,#f9dde3 0,transparent 70%),radial-gradient(ellipse 55% 30% at 100% 100%,#f9dde3 0,transparent 70%);
-  --shadow:#5e214255;--name:#5e2142;--accent:#c45d7d;--label:#7a5a26;--body:#3b2a31;--strong:#5e2142;--rule:#c45d7d;
+  --shadow:#5e214255;--name:#5e2142;--accent:#a83a62;--label:#7a5a26;--body:#3b2a31;--strong:#5e2142;--rule:#c45d7d;
   --box:#fff8f8cc;--boxline:#efc9d3;--f1:#a8834a;--f2:#e4b9c4;--grain:.22;--blend:multiply}
 
 .layer{position:absolute;inset:0;pointer-events:none}
@@ -67,7 +67,8 @@ canvas.air{z-index:3;width:100%;height:100%}
 .branch.br{bottom:-7cqw;right:-8cqw;width:42cqw;transform-origin:50% 50%;animation:swayB 7s ease-in-out infinite alternate}
 @keyframes swayA{from{transform:rotate(-1.2deg)}to{transform:rotate(1.6deg)}}
 @keyframes swayB{from{transform:rotate(178.8deg)}to{transform:rotate(181.4deg)}}
-.card[data-theme="thread"] .branch,.card[data-theme="breeze"] .branch.br{display:none}
+.card[data-theme="thread"] .branch.br,.card[data-theme="breeze"] .branch.br{display:none}
+.card[data-theme="thread"] .branch.tl{width:40cqw;top:-7cqw;left:-7cqw}
 .card[data-theme="thread"] .frame{display:none}
 .extra{display:none}
 .card[data-theme="lacquer"] .x-lacquer,.card[data-theme="thread"] .x-thread,.card[data-theme="breeze"] .x-breeze{display:block}
@@ -93,17 +94,17 @@ canvas.air{z-index:3;width:100%;height:100%}
 @keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.18)}30%{transform:scale(1)}45%{transform:scale(1.1)}}
 
 /* breeze: hanko seal */
-.seal{position:absolute;left:6.5cqw;bottom:6.5cqw;width:12.5cqw;z-index:5;transform:rotate(-9deg);opacity:.92}
+.seal{position:absolute;left:9.5cqw;bottom:10cqw;width:10.5cqw;z-index:5;transform:rotate(-9deg);opacity:.92}
 
 /* ---------- content ---------- */
 .content{position:absolute;inset:0;z-index:6;display:flex;flex-direction:column;align-items:center;text-align:center;padding:21.5cqw 16cqw 12cqw;justify-content:space-between}
 .bism{font-family:Amiri,serif;font-weight:700;font-size:4.6cqw;color:var(--strong);line-height:1.45;direction:rtl}
-.salam{margin-top:1.2cqw;font-size:2.9cqw;letter-spacing:.7cqw;text-transform:uppercase;color:var(--label);font-weight:700}
+.salam{margin-top:2cqw;font-size:2.9cqw;letter-spacing:.7cqw;text-transform:uppercase;color:var(--label);font-weight:700}
 .lede{font-size:3.4cqw;line-height:1.3;color:var(--body)}
 .event{font-family:"Great Vibes",cursive;font-size:7.6cqw;color:var(--accent);line-height:1;margin-top:1cqw}
 .names{display:flex;flex-direction:column;align-items:center;margin-top:1cqw}
 .name{font-family:"Great Vibes",cursive;color:var(--name);line-height:1.12;font-size:8.2cqw;padding:0 2cqw}
-.amp{font-family:"Great Vibes",cursive;color:var(--label);font-size:6.6cqw;line-height:.95}
+.amp{font-family:"Great Vibes",cursive;color:var(--label);font-size:8.2cqw;line-height:.95}
 .bride{font-size:3.1cqw;letter-spacing:.6cqw;text-transform:uppercase;color:var(--label);font-weight:700;margin:.4cqw 0 1.4cqw}
 .bride + .name{font-size:6.9cqw}
 .card:not([data-theme="blush"]) .name{background:linear-gradient(100deg,#8c6420 0%,#e9c46a 18%,#fff0c2 30%,#c99a3c 44%,#8c6420 56%,#f2d68e 74%,#b8892f 100%);
@@ -216,11 +217,10 @@ body.light .btn{border-color:#5e2142;color:#5e2142}body.light .btn.primary{backg
   <!-- thread: the red string of fate, groom's ring → heart knot at the arch → bride's ring -->
   <svg class="extra x-thread thread" viewBox="0 0 100 141" aria-hidden="true">
     <path class="rest" d="M7.5 46 V137 H92.5 V68"/>
-    <path class="rest" d="M9 47 V135.5 H91 V69" opacity=".5"/>
-    <path class="string" pathLength="1" d="M22.4 52.8 C 15 53.2 7.5 51 7.5 44 L7.5 28 C7.5 18 28 12.5 50 10.2 C 47 8.6 43.6 6 45 3.6 C 46.3 1.6 49.2 2 50 4.6 C 50.8 2 53.7 1.6 55 3.6 C 56.4 6 53 8.6 50 10.2 C 72 12.5 92.5 18 92.5 28 L92.5 66 C92.5 73 86 74.6 74.6 74.6"/>
+        <path class="string" pathLength="1" d="M19.8 52.8 C 14 53.2 7.5 51 7.5 44 L7.5 28 C7.5 18 28 12.5 50 10.2 C 47 8.6 43.6 6 45 3.6 C 46.3 1.6 49.2 2 50 4.6 C 50.8 2 53.7 1.6 55 3.6 C 56.4 6 53 8.6 50 10.2 C 72 12.5 92.5 18 92.5 28 L92.5 66 C92.5 71.5 87 73.2 77 73.2"/>
     <g class="heart"><path d="M50 10.2 C 47 8.6 43.6 6 45 3.6 C 46.3 1.6 49.2 2 50 4.6 C 50.8 2 53.7 1.6 55 3.6 C 56.4 6 53 8.6 50 10.2Z" fill="#d8283a" opacity=".25"/></g>
-    <circle class="ring r1" cx="23.2" cy="52.8" r=".9"/>
-    <circle class="ring r2" cx="73.8" cy="74.6" r=".9"/>
+    <circle class="ring r1" cx="20.6" cy="52.8" r=".9"/>
+    <circle class="ring r2" cx="76.2" cy="73.2" r=".9"/>
   </svg>
 
   <!-- breeze: red hanko seal with a blossom -->
@@ -361,7 +361,7 @@ const lanternSVG = `<svg viewBox="0 0 40 64"><line x1="20" y1="0" x2="20" y2="7"
   <g stroke="#a3360f" stroke-width=".8" fill="none" opacity=".55"><ellipse cx="20" cy="32" rx="9" ry="22"/><path d="M3 22 H37 M3 32 H37 M3 42 H37"/></g>
   <line x1="20" y1="58" x2="20" y2="64" stroke="#e8b84a" stroke-width="1.6"/>
   <defs><radialGradient id="lg" cx="50%" cy="45%"><stop offset="0" stop-color="#fff2c4" stop-opacity=".95"/><stop offset=".6" stop-color="#ff7a2a" stop-opacity=".35"/><stop offset="1" stop-color="#b8160e" stop-opacity=".9"/></radialGradient></defs></svg>`;
-document.getElementById("lanterns").innerHTML = [[4,26,-4,1],[88,32,-15,.8],[11,30,-22,.7],[91,24,-9,.95],[2,36,-30,.6]]
+document.getElementById("lanterns").innerHTML = [[7,26,-4,.95],[86.5,32,-15,.8],[8.5,30,-19,.7],[86,24,-8,.9],[6.5,36,-30,.6]]
   .map(([l,d,dl,s])=>`<div class="lantern" style="left:${l}cqw;animation-duration:${d}s;animation-delay:${dl}s;scale:${s}">${lanternSVG}</div>`).join("");
 
 // ---------- the wind: a flow field that moves petals, gold dust and visible air currents ----------
@@ -385,10 +385,10 @@ function step(dt){t+=dt;const g=gust(t);
     p.r+=p.vr*dt*(1+2*g);p.f+=p.vf*dt;if(p.x>W*1.08||p.y>H*1.05)spawnPetal(p,false)}
   for(const d of dust){const [vx,vy]=wind(d.x,d.y,t);d.x+=vx*.25*dt;d.y+=(vy*.2-H*.01)*dt;if(d.x>W)d.x-=W;if(d.y<0)d.y+=H;if(d.y>H)d.y-=H}
   for(const s of streaks){const v=s.y/H,u=s.x/W;s.x+=W*(.16+.12*g)*s.sp*dt;s.y+=H*.05*Math.sin(u*5+v*2+t*.8+s.ph)*s.sp*dt;s.h.push([s.x,s.y]);if(s.h.length>46)s.h.shift();if(s.x>W*1.15)spawnStreak(s,false)}}
-const calm=x=>.22+.78*Math.min(1,Math.abs(x/W-.5)*3.2);
+const calm=x=>.1+.9*Math.min(1,Math.abs(x/W-.5)*3.2), still=x=>(x>W*.14&&x<W*.86)?.1:1;
 function draw(){ctx.clearRect(0,0,W,H);const u=W/100;
   ctx.lineCap="round";
-  for(const s of streaks){const h=s.h;for(let i=1;i<h.length;i++){ctx.strokeStyle=`rgba(232,196,112,${(i/h.length)*.7*calm(h[i][0])})`;ctx.lineWidth=u*.32*(i/h.length);
+  for(const s of streaks){const h=s.h;for(let i=1;i<h.length;i++){ctx.strokeStyle=`rgba(232,196,112,${(i/h.length)*.7*still(h[i][0])})`;ctx.lineWidth=u*.32*(i/h.length);
     ctx.beginPath();ctx.moveTo(h[i-1][0],h[i-1][1]);ctx.lineTo(h[i][0],h[i][1]);ctx.stroke()}}
   for(const d of dust){const a=.35+.45*Math.sin(t*2+d.ph);ctx.fillStyle=`rgba(240,205,120,${Math.max(0,a)})`;ctx.beginPath();ctx.arc(d.x,d.y,d.s*u*.18,0,7);ctx.fill()}
   for(const p of petals){const k=p.z*u*.11,fl=Math.cos(p.f);ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.r);ctx.scale(k*(.15+.85*Math.abs(fl)),k);
