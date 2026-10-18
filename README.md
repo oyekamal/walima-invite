@@ -3,13 +3,14 @@
 Animated wedding invitation cards: one data file in, five designs out, each as a web page and a WhatsApp-ready PNG.
 It started as a Barat invitation for Kamal's sister (live at https://oyekamal.github.io/walima-invite/). The plan is to grow it into an app where any family types in their details and gets a beautiful card.
 
-![Midnight Sakura](card-midnight.png)
+![Blush Sakura in Urdu](card-blush.png)
 
 ## What's here
 
 | File | What it does |
 |---|---|
-| `invite.js` | **The only file a family edits.** Names, event, date, time, venue, map search, RSVP numbers, closing line, default design. |
+| `examples/invite.en.js` | The same invitation in English, as a second example. Copy it over `invite.js` to switch. |
+| `invite.js` | **The only file a family edits.** (Currently the live Urdu Barat card.) Names, event, date, time, venue, map search, RSVP numbers, closing line, default design. |
 | `index.html` | The template. All five designs, the design picker, the envelope intro, the wind animation, and the action buttons. It fills itself from `invite.js`. |
 | `qr.svg` | The QR code on the card. It opens the venue in Google Maps. Generated, don't edit by hand. |
 | `card-<design>.png`, `card.png` | Still images of each design (1120×1580) for WhatsApp and printing. `card.png` is the default design and the link-preview image. |
@@ -39,7 +40,10 @@ To share a single design, add its name after `#` in the link, for example `…/#
 | `maps_query` | `Al Firdous Marriage Hall, Lehtrar Road, …` | Used for the QR code and the Directions button. Test it in Google Maps first. |
 | `rsvp` | `["0334-5121715", …]` | Pakistani numbers. Each one becomes a `tel:+92…` link and a Call button. |
 | `closing` | `Looking forward to seeing you!` | |
-| `theme` | `midnight` | The default design. |
+| `theme` | `blush` | The default design. |
+| `themes` | `["blush"]` | Which designs the page offers. A single design hides the picker; leave it out to offer all five. |
+| `lang` | `ur` or `en` | `ur` switches the card and the page to right-to-left Urdu: Gulzar for names and headings, Noto Nastaliq Urdu for the rest, Urdu buttons, Urdu times ("دوپہر 12 بجے"). |
+| `joiner` | `ہمراہ` | The word between the two names. Defaults to `&`. In Urdu the `name_2_prefix` (e.g. `دخترِ`) sits inline before the second name. |
 
 ## The five designs
 
@@ -58,6 +62,8 @@ How it works:
 - **Wind** is one flow field on a `<canvas>`. Petals, gold dust and air currents all move through it, and a gust function makes them speed up now and then. Marks fade in the text column so the words stay clean.
 - **Card sizing** uses container-query units (`cqw`), so the card scales as one piece at any width.
 - **Envelope intro** shows once per visit (sessionStorage).
+- **Countdown** under the card ("27 دن باقی ہیں" / "27 days to go"), worked out from the date and start time.
+- **The white design** gets an ivory envelope and rose-gold shimmer on the names.
 - **Reduced motion:** with the system setting on, the page skips the envelope and shows a still frame.
 
 ## Checks before sharing a card

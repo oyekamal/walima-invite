@@ -22,7 +22,7 @@ with sync_playwright() as p:
         page.close()
     browser.close()
 
-default = json.loads((root / "invite.js").read_text().split("window.INVITE =", 1)[1].strip().rstrip(";"))["theme"]
+default = json.loads((root / "invite.js").read_text().rsplit("window.INVITE =", 1)[1].strip().rstrip(";"))["theme"]
 if default in themes:
     shutil.copy(root / f"card-{default}.png", root / "card.png")
 

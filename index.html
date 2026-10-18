@@ -10,7 +10,7 @@
 <meta property="og:image" content="card.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Great+Vibes&family=Gulzar&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--page:#141010;--page-ink:#e9dcc6;--chip:#1f1817;--gold:#c9a14a}
 *{box-sizing:border-box;margin:0}
@@ -154,6 +154,47 @@ body.light .btn{border-color:#5e2142;color:#5e2142}body.light .btn.primary{backg
 .envelope.open .env{animation:sink 1s ease-in .9s forwards}
 .envelope.open{opacity:0;pointer-events:none}
 @keyframes sink{to{transform:translateY(40vh) scale(.9)}}
+/* ---------- Urdu ---------- */
+.card[lang="ur"] .content{font-family:"Noto Nastaliq Urdu",serif;padding-top:19.5cqw;padding-bottom:11.5cqw}
+.card[lang="ur"] .content *{letter-spacing:0!important;text-transform:none!important}
+.card[lang="ur"] .salam{font-family:Gulzar,serif;font-size:4cqw;line-height:1.5;margin-top:2.2cqw;font-weight:400}
+.card[lang="ur"] .lede{font-size:3.1cqw;line-height:1.75}
+.card[lang="ur"] .event{font-family:Gulzar,serif;font-size:8.2cqw;line-height:1.3;margin-top:0}
+.card[lang="ur"] .names{margin-top:0}
+.card[lang="ur"] .name{font-family:Gulzar,serif;font-size:7.8cqw;line-height:1.35;padding:0 3cqw}
+.card[lang="ur"] .name small{font-family:"Noto Nastaliq Urdu",serif;font-size:.42em;color:var(--label);-webkit-text-fill-color:var(--label);font-weight:600;vertical-align:.35em;margin-left:1.2cqw}
+.card[lang="ur"] .bride{display:none}
+.card[lang="ur"] .amp{font-family:"Noto Nastaliq Urdu",serif;font-size:3.2cqw;line-height:1.6;font-weight:600;display:flex;align-items:center;gap:2.5cqw;margin:-.6cqw 0 1cqw}
+.card[lang="ur"] .amp::before,.card[lang="ur"] .amp::after{content:"";width:9cqw;height:.18cqw;background:linear-gradient(90deg,transparent,var(--label),transparent)}
+.card[lang="ur"] .date .side{font-size:3.4cqw;line-height:1.8;padding:.1cqw 0;font-weight:600}
+.card[lang="ur"] .date .day{font-family:"Cormorant Garamond",serif}
+.card[lang="ur"] .time{font-size:3.15cqw;line-height:1.6;margin-top:.4cqw;font-weight:600}
+.card[lang="ur"] .venue-row{text-align:right;padding:.8cqw 3cqw}
+.card[lang="ur"] .venue{font-size:2.95cqw;line-height:1.8}
+.card[lang="ur"] .venue strong{font-size:3.6cqw;line-height:1.75}
+.card[lang="ur"] .venue small,.card[lang="ur"] .rsvp small{font-size:2.8cqw;line-height:1.6;margin:0;font-weight:600}
+.card[lang="ur"] .qr{width:15cqw;font-size:2.3cqw;line-height:1.7;font-family:"Noto Nastaliq Urdu",serif}
+.card[lang="ur"] .qr a{margin-bottom:.2cqw}
+.card[lang="ur"] .rsvp{margin-top:0;font-size:3.6cqw;line-height:1.3;font-family:"Cormorant Garamond",serif}
+.card[lang="ur"] .rsvp small{font-family:"Noto Nastaliq Urdu",serif;margin-bottom:.2cqw}
+.card[lang="ur"] .rsvp a{font-family:"Cormorant Garamond",serif}
+.card[lang="ur"] .close{font-family:Gulzar,serif;font-size:4.4cqw;line-height:1.5;margin-top:1.6cqw}
+body.ur .btn,body.ur .foot,body.ur .countdown,body.ur .env-cta,body.ur .picker{font-family:"Noto Nastaliq Urdu",serif;letter-spacing:0}
+body.ur .btn{font-size:15px;line-height:2;padding:8px 10px}
+body.ur .btn bdi{font-family:"Cormorant Garamond",serif;font-size:17px}
+body.ur .env-cta{font-size:20px}
+.card[data-theme="blush"] .name{background:linear-gradient(100deg,#5e2142 0%,#8a3a5c 22%,#b0684c 34%,#d29a68 40%,#8a3a5c 52%,#5e2142 70%,#7d3459 100%);
+  background-size:260% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:foil 9s linear infinite}
+.countdown{margin-top:16px;font-size:20px;color:var(--gold);text-align:center}
+.countdown:empty{display:none}
+body.light .countdown{color:#a83a62}
+/* the white design gets an ivory envelope with a rose seal */
+body.light .envelope{background:radial-gradient(circle at 50% 40%,#fff8f6,#f1dde0 75%)}
+body.light .env-body{background:linear-gradient(160deg,#fffdf9,#f7ece6);border-color:#c9a26a;box-shadow:0 30px 60px #5e214233}
+body.light .env-body::after{background:linear-gradient(to top right,transparent 49.6%,#c9a26a88 50%,transparent 50.4%),linear-gradient(to top left,transparent 49.6%,#c9a26a88 50%,transparent 50.4%)}
+body.light .env-flap::before{background:linear-gradient(180deg,#fdf3ef,#f3e2dc)}
+body.light .env-flap::after{background:#c9a26a}
+body.light .env-cta{color:#a83a62}
 @media (prefers-reduced-motion:reduce){.envelope{display:none}.branch,.lantern,.lantern svg,.name,.thread *{animation:none!important}}
 @media print{body{background:#fff;padding:0}.actions,.foot,.picker,.envelope{display:none}.card{box-shadow:none;width:148mm}}
 </style>
@@ -177,13 +218,13 @@ body.light .btn{border-color:#5e2142;color:#5e2142}body.light .btn.primary{backg
         <circle r="3" fill="#8a0d18"/>
       </g>
     </svg>
-    <div class="env-cta">Tap to open</div>
+    <div class="env-cta" data-t="envcta">Tap to open</div>
   </div>
 </div>
 
 <section class="picker" aria-label="Choose a design">
-  <h1>Choose your design</h1>
-  <p>Five designs, same invitation. Tap one to see it come alive.</p>
+  <h1 data-t="pick_h">Choose your design</h1>
+  <p data-t="pick_p">Five designs, same invitation. Tap one to see it come alive.</p>
   <div class="chips" id="chips"></div>
   <div class="blurb" id="blurb"></div>
 </section>
@@ -251,7 +292,7 @@ body.light .btn{border-color:#5e2142;color:#5e2142}body.light .btn.primary{backg
     </div>
     <div class="names">
       <div class="name" data-f="name_1"></div>
-      <div class="amp">&amp;</div>
+      <div class="amp" data-f="joiner">&amp;</div>
       <div class="bride" data-f="name_2_prefix"></div>
       <div class="name" data-f="name_2"></div>
     </div>
@@ -265,18 +306,18 @@ body.light .btn{border-color:#5e2142;color:#5e2142}body.light .btn.primary{backg
     </div>
     <div class="venue-row">
       <div class="venue">
-        <small>Venue</small>
+        <small data-t="venue">Venue</small>
         <strong data-f="venue_name"></strong>
         <span data-f="venue_address"></span>
       </div>
       <div class="qr">
         <a data-href="maps" aria-label="Open venue in Google Maps"><img src="qr.svg" alt="QR code to the venue on Google Maps"></a>
-        Scan for map
+        <span data-t="scan">Scan for map</span>
       </div>
     </div>
     <div>
       <div class="rsvp">
-        <small>RSVP</small>
+        <small data-t="rsvp">RSVP</small>
         <span id="rsvp"></span>
       </div>
       <div class="close" data-f="closing"></div>
@@ -285,30 +326,48 @@ body.light .btn{border-color:#5e2142;color:#5e2142}body.light .btn.primary{backg
 </main>
 
 <nav class="actions" aria-label="Invitation actions" id="actions">
-  <a class="btn primary" data-href="maps">Directions to the venue</a>
-  <a class="btn" data-href="calendar">Add to calendar</a>
-  <a class="btn" id="save" href="card-midnight.png" download="invite.png">Save card</a>
+  <a class="btn primary" data-href="maps" data-t="directions">Directions to the venue</a>
+  <a class="btn" data-href="calendar" data-t="calendar">Add to calendar</a>
+  <a class="btn" id="save" href="card-midnight.png" download="invite.png" data-t="save">Save card</a>
 </nav>
+<p class="countdown" id="countdown"></p>
 <p class="foot" id="foot"></p>
 
 <script src="invite.js"></script>
 <script>
-// Fill the card from invite.js.
-(()=>{const I=window.INVITE,$=s=>document.querySelectorAll(s);
-  const d=new Date(I.date+"T12:00:00"),t12=hm=>{let[h,m]=hm.split(":").map(Number);return `${(h%12)||12}:${String(m).padStart(2,"0")} ${h<12?"AM":"PM"}`};
+// Fill the card from invite.js. Text on the page (buttons, labels) comes from UI[lang].
+const UI={
+  en:{venue:"Venue",scan:"Scan for map",rsvp:"RSVP",directions:"Directions to the venue",calendar:"Add to calendar",save:"Save card",call:"Call",
+      foot:"With love and duas",envcta:"Tap to open",pick_h:"Choose your design",pick_p:"Five designs, same invitation. Tap one to see it come alive.",
+      days:n=>`${n} days to go`,today:"Today is the day!",title:e=>`${e.split(" ")[0]} Invitation`},
+  ur:{venue:"مقام",scan:"نقشہ اسکین کریں",rsvp:"برائے رابطہ",directions:"شادی ہال تک راستہ",calendar:"کیلنڈر میں شامل کریں",save:"کارڈ محفوظ کریں",call:"کال کریں",
+      foot:"دعاؤں کے ساتھ",envcta:"کھولنے کے لیے چھوئیں",pick_h:"ڈیزائن منتخب کریں",pick_p:"ایک دعوت نامہ، پانچ ڈیزائن۔",
+      days:n=>`${n} دن باقی ہیں`,today:"آج شادی کا دن ہے!",title:e=>`دعوت نامہ · ${e}`}};
+(()=>{const I=window.INVITE,L=I.lang==="ur"?"ur":"en",T=UI[L],$=s=>document.querySelectorAll(s);
+  const loc=L==="ur"?"ur-PK":"en-GB",d=new Date(I.date+"T12:00:00");
+  const t12=hm=>{let[h,m]=hm.split(":").map(Number),c=`${(h%12)||12}${m?":"+String(m).padStart(2,"0"):""}`;
+    if(L==="en")return `${(h%12)||12}:${String(m).padStart(2,"0")} ${h<12?"AM":"PM"}`;
+    return `${h<12?"صبح":h<15?"دوپہر":h<18?"سہ پہر":h<20?"شام":"رات"} ${c} بجے`};
   const utc=hm=>new Date(`${I.date}T${hm}:00${I.utc_offset}`).toISOString().replace(/[-:]|\.\d{3}/g,"");
   const tel=n=>"tel:+92"+n.replace(/\D/g,"").replace(/^0/,"");
-  const F={...I,weekday:d.toLocaleDateString("en-GB",{weekday:"long"}),day:d.getDate(),
-    monthyear:d.toLocaleDateString("en-GB",{month:"short"})+" · "+d.getFullYear(),t1:t12(I.time_start),t2:t12(I.time_end)};
+  const F={joiner:"&",...I,weekday:d.toLocaleDateString(loc,{weekday:"long"}),day:d.getDate(),
+    monthyear:d.toLocaleDateString(loc,{month:L==="ur"?"long":"short"})+(L==="ur"?" ":" · ")+d.getFullYear(),t1:t12(I.time_start),t2:t12(I.time_end)};
+  const card=document.getElementById("card");card.lang=L;card.dir=L==="ur"?"rtl":"ltr";document.documentElement.lang=L;
+  if(L==="ur"){document.body.classList.add("ur");["actions","countdown","foot"].forEach(id=>document.getElementById(id).dir="rtl")}
   $("[data-f]").forEach(e=>e.textContent=F[e.dataset.f]);
+  if(L==="ur"){const n2=document.querySelector('[data-f="name_2"]');n2.innerHTML=`<small></small><span></span>`;n2.firstChild.textContent=I.name_2_prefix;n2.lastChild.textContent=I.name_2;
+    const ad=document.querySelector('[data-f="venue_address"]');ad.textContent=I.venue_address.replace(/ (\S+)$/,"\u00a0$1")}
+  $("[data-t]").forEach(e=>e.textContent=T[e.dataset.t]);
   const H={maps:"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(I.maps_query),
     calendar:"https://calendar.google.com/calendar/render?action=TEMPLATE&text="+encodeURIComponent(`${I.event} – ${I.name_1}`)+
       `&dates=${utc(I.time_start)}/${utc(I.time_end)}&location=`+encodeURIComponent(I.venue_name+", "+I.venue_address)};
   $("[data-href]").forEach(e=>e.href=H[e.dataset.href]);
-  document.getElementById("rsvp").innerHTML=I.rsvp.map(n=>`<a href="${tel(n)}">${n}</a>`).join(" &nbsp;|&nbsp; ");
-  document.getElementById("actions").insertAdjacentHTML("beforeend",I.rsvp.map(n=>`<a class="btn" href="${tel(n)}">Call ${n}</a>`).join(""));
-  document.getElementById("foot").textContent="With love and duas · "+d.toLocaleDateString("en-GB",{day:"numeric",month:"long",year:"numeric"});
-  document.title=`${I.event.split(" ")[0]} Invitation`;
+  document.getElementById("rsvp").innerHTML=I.rsvp.map(n=>`<a href="${tel(n)}" dir="ltr">${n}</a>`).join(" &nbsp;|&nbsp; ");
+  document.getElementById("actions").insertAdjacentHTML("beforeend",I.rsvp.map(n=>`<a class="btn" href="${tel(n)}">${T.call} <bdi dir="ltr">${n}</bdi></a>`).join(""));
+  document.getElementById("foot").textContent=T.foot+(L==="ur"?" — ":" · ")+d.getDate()+" "+d.toLocaleDateString(loc,{month:"long"})+" "+d.getFullYear();
+  const left=Math.ceil((new Date(`${I.date}T${I.time_start}:00${I.utc_offset}`)-Date.now())/864e5);
+  document.getElementById("countdown").textContent=left>1?T.days(left):left>=0?T.today:"";
+  document.title=T.title(I.event);
 })();
 </script>
 <script>
@@ -417,8 +476,10 @@ function loop(ts){const dt=Math.min(.05,(ts-last)/1000||0);last=ts;step(dt);draw
 
 // ---------- picker ----------
 const chips=document.getElementById("chips"), blurb=document.getElementById("blurb"), save=document.getElementById("save"), defsEl=document.getElementById("defs");
-chips.innerHTML=Object.entries(THEMES).map(([k,v])=>`<button class="chip" data-k="${k}" aria-pressed="false"><span class="sw" style="background:${v.sw}"></span>${v.label}</button>`).join("");
-function setTheme(k){if(!THEMES[k])k="midnight";const th=THEMES[k];card.dataset.theme=k;defsEl.innerHTML=defs(th.p);
+const ALLOWED=window.INVITE.themes||Object.keys(THEMES);
+if(ALLOWED.length<2)document.querySelector(".picker").hidden=true;
+chips.innerHTML=Object.entries(THEMES).filter(([k])=>ALLOWED.includes(k)).map(([k,v])=>`<button class="chip" data-k="${k}" aria-pressed="false"><span class="sw" style="background:${v.sw}"></span>${v.label}</button>`).join("");
+function setTheme(k){if(!ALLOWED.includes(k))k=ALLOWED.includes(window.INVITE.theme)?window.INVITE.theme:ALLOWED[0];const th=THEMES[k];card.dataset.theme=k;defsEl.innerHTML=defs(th.p);
   document.body.classList.toggle("light",k==="blush");
   chips.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",c.dataset.k===k));
   blurb.textContent=th.blurb;save.href=`card-${k}.png`;save.download=`barat-invite-${k}.png`;
