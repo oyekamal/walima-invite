@@ -63,8 +63,8 @@ body.light{--page:#f3e6e6;--page-ink:#3b2a31;--chip:#fffafa;background-image:rad
 .frame{position:absolute;inset:4cqw;width:92cqw;height:133cqw;pointer-events:none;z-index:2}
 canvas.air{z-index:3;width:100%;height:100%}
 .branch{position:absolute;pointer-events:none;overflow:visible;z-index:4}
-.branch.tl{top:-10cqw;left:-10cqw;width:64cqw;transform-origin:8% 8%;animation:swayA 6s ease-in-out infinite alternate}
-.branch.br{bottom:-7cqw;right:-8cqw;width:42cqw;transform-origin:50% 50%;animation:swayB 7s ease-in-out infinite alternate}
+.branch.tl{top:-14cqw;left:-15cqw;width:62cqw;transform-origin:8% 8%;animation:swayA 6s ease-in-out infinite alternate}
+.branch.br{bottom:-9cqw;right:-10cqw;width:34cqw;transform:rotate(180deg);transform-origin:50% 50%;animation:swayB 7s ease-in-out infinite alternate}
 @keyframes swayA{from{transform:rotate(-1.2deg)}to{transform:rotate(1.6deg)}}
 @keyframes swayB{from{transform:rotate(178.8deg)}to{transform:rotate(181.4deg)}}
 .card[data-theme="thread"] .branch.br,.card[data-theme="breeze"] .branch.br{display:none}
@@ -107,6 +107,7 @@ canvas.air{z-index:3;width:100%;height:100%}
 .amp{font-family:"Great Vibes",cursive;color:var(--label);font-size:8.2cqw;line-height:.95}
 .bride{font-size:3.1cqw;letter-spacing:.6cqw;text-transform:uppercase;color:var(--label);font-weight:700;margin:.4cqw 0 1.4cqw}
 .bride + .name{font-size:6.9cqw}
+.after{font-size:3.3cqw;color:var(--body);margin-top:.6cqw}.after:empty{display:none}
 .card:not([data-theme="blush"]) .name{background:linear-gradient(100deg,#8c6420 0%,#e9c46a 18%,#fff0c2 30%,#c99a3c 44%,#8c6420 56%,#f2d68e 74%,#b8892f 100%);
   background-size:260% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:foil 7s linear infinite}
 .card[data-theme="lacquer"] .name{background-image:linear-gradient(100deg,#c99a3c 0%,#ffe9a8 18%,#fffaf0 30%,#f0c96a 44%,#c99a3c 56%,#ffe5a0 74%,#e0ad4c 100%)}
@@ -155,30 +156,34 @@ body.light .btn{border-color:#5e2142;color:#5e2142}body.light .btn.primary{backg
 .envelope.open{opacity:0;pointer-events:none}
 @keyframes sink{to{transform:translateY(40vh) scale(.9)}}
 /* ---------- Urdu ---------- */
-.card[lang="ur"] .content{font-family:"Noto Nastaliq Urdu",serif;padding-top:19.5cqw;padding-bottom:11.5cqw}
+.card[lang="ur"] .content{font-family:"Noto Nastaliq Urdu",serif;padding-top:18.5cqw;padding-bottom:11.5cqw}
 .card[lang="ur"] .content *{letter-spacing:0!important;text-transform:none!important}
-.card[lang="ur"] .salam{font-family:Gulzar,serif;font-size:4cqw;line-height:1.5;margin-top:2.2cqw;font-weight:400}
-.card[lang="ur"] .lede{font-size:3.1cqw;line-height:1.75}
-.card[lang="ur"] .event{font-family:Gulzar,serif;font-size:8.2cqw;line-height:1.3;margin-top:0}
+.card[lang="ur"] .salam{font-family:Gulzar,serif;font-size:3.8cqw;line-height:1.5;margin-top:3.4cqw;font-weight:400}
+.card[lang="ur"] .lede{font-size:3.1cqw;line-height:1.75;margin-bottom:.8cqw}
+.card[lang="ur"] .lede{order:1}.card[lang="ur"] .names{order:2}.card[lang="ur"] .event{order:3}.card[lang="ur"] .when{order:4}.card[lang="ur"] .venue-row{order:5}.card[lang="ur"] .content>div:last-child{order:6}
+.card[lang="ur"] .event{font-family:Gulzar,serif;font-size:6.6cqw;line-height:1.4;margin:1cqw 0 0;display:flex;align-items:center;gap:3cqw}
+.card[lang="ur"] .event::before,.card[lang="ur"] .event::after{content:"";width:13cqw;height:2.2cqw;background:radial-gradient(circle,var(--accent) 0 .45cqw,transparent .5cqw) center/2.2cqw 2.2cqw no-repeat,linear-gradient(var(--label),var(--label)) center/100% .16cqw no-repeat;opacity:.75}
 .card[lang="ur"] .names{margin-top:0}
-.card[lang="ur"] .name{font-family:Gulzar,serif;font-size:7.8cqw;line-height:1.35;padding:0 3cqw}
+.card[lang="ur"] .name{font-family:Gulzar,serif;font-size:7cqw;line-height:1.38;padding:0 3cqw}
 .card[lang="ur"] .name small{font-family:"Noto Nastaliq Urdu",serif;font-size:.42em;color:var(--label);-webkit-text-fill-color:var(--label);font-weight:600;vertical-align:.35em;margin-left:1.2cqw}
 .card[lang="ur"] .bride{display:none}
+.card[lang="ur"] .after{font-size:3.05cqw;line-height:1.8;margin-top:.6cqw}
+.card[lang="ur"] .time i{font-style:normal;color:var(--label)}.card[lang="ur"] .time span{padding:0 1.2cqw}
 .card[lang="ur"] .amp{font-family:"Noto Nastaliq Urdu",serif;font-size:3.2cqw;line-height:1.6;font-weight:600;display:flex;align-items:center;gap:2.5cqw;margin:-.6cqw 0 1cqw}
 .card[lang="ur"] .amp::before,.card[lang="ur"] .amp::after{content:"";width:9cqw;height:.18cqw;background:linear-gradient(90deg,transparent,var(--label),transparent)}
 .card[lang="ur"] .date .side{font-size:3.4cqw;line-height:1.8;padding:.1cqw 0;font-weight:600}
-.card[lang="ur"] .date .day{font-family:"Cormorant Garamond",serif}
+.card[lang="ur"] .date .day{font-family:"Cormorant Garamond",serif;font-size:8.6cqw}
 .card[lang="ur"] .time{font-size:3.15cqw;line-height:1.6;margin-top:.4cqw;font-weight:600}
-.card[lang="ur"] .venue-row{text-align:right;padding:.8cqw 3cqw}
-.card[lang="ur"] .venue{font-size:2.95cqw;line-height:1.8}
-.card[lang="ur"] .venue strong{font-size:3.6cqw;line-height:1.75}
+.card[lang="ur"] .venue-row{text-align:right;padding:.8cqw 3cqw;margin-top:1.2cqw}
+.card[lang="ur"] .venue{font-size:2.9cqw;line-height:2}
+.card[lang="ur"] .venue strong{font-size:3.5cqw;line-height:2.05}
 .card[lang="ur"] .venue small,.card[lang="ur"] .rsvp small{font-size:2.8cqw;line-height:1.6;margin:0;font-weight:600}
-.card[lang="ur"] .qr{width:15cqw;font-size:2.3cqw;line-height:1.7;font-family:"Noto Nastaliq Urdu",serif}
-.card[lang="ur"] .qr a{margin-bottom:.2cqw}
+.card[lang="ur"] .qr{width:13.5cqw;font-size:2.3cqw;line-height:1.7;font-family:"Noto Nastaliq Urdu",serif}
+.card[lang="ur"] .qr a{margin-bottom:2cqw}
 .card[lang="ur"] .rsvp{margin-top:0;font-size:3.6cqw;line-height:1.3;font-family:"Cormorant Garamond",serif}
-.card[lang="ur"] .rsvp small{font-family:"Noto Nastaliq Urdu",serif;margin-bottom:.2cqw}
+.card[lang="ur"] .rsvp small{font-family:"Noto Nastaliq Urdu",serif;display:inline;margin:0 0 0 2.4cqw;font-size:3cqw}
 .card[lang="ur"] .rsvp a{font-family:"Cormorant Garamond",serif}
-.card[lang="ur"] .close{font-family:Gulzar,serif;font-size:4.4cqw;line-height:1.5;margin-top:1.6cqw}
+.card[lang="ur"] .close{font-family:"Noto Nastaliq Urdu",serif;font-size:2.85cqw;line-height:1.9;margin-top:1.4cqw;white-space:nowrap;color:var(--accent);font-weight:600}
 body.ur .btn,body.ur .foot,body.ur .countdown,body.ur .env-cta,body.ur .picker{font-family:"Noto Nastaliq Urdu",serif;letter-spacing:0}
 body.ur .btn{font-size:15px;line-height:2;padding:8px 10px}
 body.ur .btn bdi{font-family:"Cormorant Garamond",serif;font-size:17px}
@@ -286,15 +291,14 @@ body.light .env-cta{color:#a83a62}
       <div class="bism" lang="ar" data-f="greeting_ar"></div>
       <div class="salam" data-f="salam"></div>
     </div>
-    <div>
-      <p class="lede" data-f="lede"></p>
-      <div class="event" data-f="event"></div>
-    </div>
+    <p class="lede" data-f="lede"></p>
+    <div class="event" data-f="event"></div>
     <div class="names">
       <div class="name" data-f="name_1"></div>
       <div class="amp" data-f="joiner">&amp;</div>
       <div class="bride" data-f="name_2_prefix"></div>
       <div class="name" data-f="name_2"></div>
+      <p class="after" data-f="after_names"></p>
     </div>
     <div class="when">
       <div class="date">
@@ -302,7 +306,7 @@ body.light .env-cta{color:#a83a62}
         <div class="day" data-f="day"></div>
         <div class="side" data-f="monthyear"></div>
       </div>
-      <div class="time"><b data-f="t1"></b><span>—</span><b data-f="t2"></b></div>
+      <div class="time"><i data-t="time_label"></i><b data-f="t1"></b><span data-t="time_sep">—</span><b data-f="t2"></b></div>
     </div>
     <div class="venue-row">
       <div class="venue">
@@ -339,18 +343,19 @@ body.light .env-cta{color:#a83a62}
 const UI={
   en:{venue:"Venue",scan:"Scan for map",rsvp:"RSVP",directions:"Directions to the venue",calendar:"Add to calendar",save:"Save card",call:"Call",
       foot:"With love and duas",envcta:"Tap to open",pick_h:"Choose your design",pick_p:"Five designs, same invitation. Tap one to see it come alive.",
-      days:n=>`${n} days to go`,today:"Today is the day!",title:e=>`${e.split(" ")[0]} Invitation`},
-  ur:{venue:"مقام",scan:"نقشہ اسکین کریں",rsvp:"برائے رابطہ",directions:"شادی ہال تک راستہ",calendar:"کیلنڈر میں شامل کریں",save:"کارڈ محفوظ کریں",call:"کال کریں",
+      time_label:"",time_sep:"—",days:n=>`${n} days to go`,today:"Today is the day!",title:e=>`${e.split(" ")[0]} Invitation`},
+  ur:{venue:"بمقام",scan:"نقشہ اسکین کریں",rsvp:"برائے رابطہ",directions:"شادی ہال تک راستہ",calendar:"کیلنڈر میں شامل کریں",save:"کارڈ محفوظ کریں",call:"کال کریں",
       foot:"دعاؤں کے ساتھ",envcta:"کھولنے کے لیے چھوئیں",pick_h:"ڈیزائن منتخب کریں",pick_p:"ایک دعوت نامہ، پانچ ڈیزائن۔",
-      days:n=>`${n} دن باقی ہیں`,today:"آج شادی کا دن ہے!",title:e=>`دعوت نامہ · ${e}`}};
+      time_label:"وقت: ",time_sep:"تا",days:n=>`${n} دن باقی ہیں`,today:"آج شادی کا دن ہے!",title:e=>`دعوت نامہ · ${e}`}};
 (()=>{const I=window.INVITE,L=I.lang==="ur"?"ur":"en",T=UI[L],$=s=>document.querySelectorAll(s);
   const loc=L==="ur"?"ur-PK":"en-GB",d=new Date(I.date+"T12:00:00");
   const t12=hm=>{let[h,m]=hm.split(":").map(Number),c=`${(h%12)||12}${m?":"+String(m).padStart(2,"0"):""}`;
     if(L==="en")return `${(h%12)||12}:${String(m).padStart(2,"0")} ${h<12?"AM":"PM"}`;
     return `${h<12?"صبح":h<15?"دوپہر":h<18?"سہ پہر":h<20?"شام":"رات"} ${c} بجے`};
+  const ur=L==="ur";
   const utc=hm=>new Date(`${I.date}T${hm}:00${I.utc_offset}`).toISOString().replace(/[-:]|\.\d{3}/g,"");
   const tel=n=>"tel:+92"+n.replace(/\D/g,"").replace(/^0/,"");
-  const F={joiner:"&",...I,weekday:d.toLocaleDateString(loc,{weekday:"long"}),day:d.getDate(),
+  const F={joiner:"&",after_names:"",...I,weekday:(ur?"بروز ":"")+d.toLocaleDateString(loc,{weekday:"long"}),day:d.getDate(),
     monthyear:d.toLocaleDateString(loc,{month:L==="ur"?"long":"short"})+(L==="ur"?" ":" · ")+d.getFullYear(),t1:t12(I.time_start),t2:t12(I.time_end)};
   const card=document.getElementById("card");card.lang=L;card.dir=L==="ur"?"rtl":"ltr";document.documentElement.lang=L;
   if(L==="ur"){document.body.classList.add("ur");["actions","countdown","foot"].forEach(id=>document.getElementById(id).dir="rtl")}

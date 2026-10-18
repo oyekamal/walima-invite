@@ -15,7 +15,7 @@ It started as a Barat invitation for Kamal's sister (live at https://oyekamal.gi
 | `qr.svg` | The QR code on the card. It opens the venue in Google Maps. Generated, don't edit by hand. |
 | `card-<design>.png`, `card.png` | Still images of each design (1120×1580) for WhatsApp and printing. `card.png` is the default design and the link-preview image. |
 | `tools/make_qr.py` | Rebuilds `qr.svg` from `maps_query` in `invite.js`. |
-| `tools/render_cards.py` | Renders every `card-*.png` in headless Chrome and checks that each QR code scans to the map link. |
+| `tools/render_cards.py` | Renders every `card-*.png` in headless Chrome. It **fails** if any two text lines touch or overlap, if text touches a branch, the frame, the thread or the seal, if text drops below the frame, or if the QR code doesn't scan. It renders each line on its own and compares real ink pixels, because Nastaliq font boxes are far taller than the letters. |
 
 ## Make a new invitation (today, by hand)
 
@@ -43,6 +43,7 @@ To share a single design, add its name after `#` in the link, for example `…/#
 | `theme` | `blush` | The default design. |
 | `themes` | `["blush"]` | Which designs the page offers. A single design hides the picker; leave it out to offer all five. |
 | `lang` | `ur` or `en` | `ur` switches the card and the page to right-to-left Urdu: Gulzar for names and headings, Noto Nastaliq Urdu for the rest, Urdu buttons, Urdu times ("دوپہر 12 بجے"). |
+| `after_names` | `کی تقریبِ شادی میں آپ کو پُرخلوص دعوت دی جاتی ہے` | Optional line under the names. In Urdu the sentence ends after the names, so the invitation goes here and `event` becomes a heading below it. |
 | `joiner` | `ہمراہ` | The word between the two names. Defaults to `&`. In Urdu the `name_2_prefix` (e.g. `دخترِ`) sits inline before the second name. |
 
 ## The five designs
@@ -68,6 +69,8 @@ How it works:
 
 ## Checks before sharing a card
 
+- `render_cards.py` passes. It enforces no overlaps, with a 2px gap at 600px card width.
+
 - The QR code scans on every PNG. `render_cards.py` asserts this.
 - No page errors during render. `render_cards.py` asserts this too.
 - Look at the card at phone width (390px). Nothing should overlap and the page should not scroll sideways.
@@ -89,3 +92,15 @@ Known limits:
 ## Credits
 
 Fonts: Great Vibes, Cormorant Garamond and Amiri (Google Fonts). Everything else (blossoms, lanterns, seal, envelope, wind) is drawn in code in this repo.
+
+## Urdu wording reference
+
+The Urdu card follows how real Pakistani barat cards are worded:
+- Bismillah, then "اللہ تعالیٰ کے فضل و کرم سے".
+- The names, then "کی تقریبِ شادی (بارات) میں آپ کو پُرخلوص دعوت …".
+- The schedule under a "بارات" heading, using بروز / بتاریخ / وقت / بمقام.
+- A closing such as "آپ کی تشریف آوری سے تقریب کی رونق میں اضافہ ہوگا".
+
+Other common phrases worth offering in the app: "شادی خانہ آبادی … قرار پائی ہے", "آمدِ بارات", "رخصتی", "متمنیِ شرکت", "چشم براہ", "بنتِ" (instead of "دخترِ") and "مع اہل و عیال".
+
+Sources: [theframers.pk barat templates](https://theframers.pk/blog/wedding-invitation-wording-pakistan-templates/), [Urdu Mehfil: دعوت نامے اردو زبان میں](https://www.urduweb.org/mehfil/threads/%D8%AF%D8%B9%D9%88%D8%AA-%D9%86%D8%A7%D9%85%DB%92-%D8%A7%D8%B1%D8%AF%D9%88-%D8%B2%D8%A8%D8%A7%D9%86-%D9%85%DB%8C%DA%BA.106588/), [urdunotes: شادی کا دعوت نامہ](https://urdunotes.com/lesson/%D8%B4%D8%A7%D8%AF%DB%8C-%DA%A9%D8%A7-%D8%AF%D8%B9%D9%88%D8%AA-%D9%86%D8%A7%D9%85%DB%81-%D8%A7%D8%B1%D8%AF%D9%88/), [printingpresspak barat wording](https://printingpresspak.blogspot.com/p/pakistani-wedding-card-wording.html).

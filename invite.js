@@ -4,14 +4,15 @@ window.INVITE = {
   "lang": "ur",
   "themes": ["blush"],
   "theme": "blush",
-  "event": "تقریبِ بارات",
+  "event": "بارات",
   "greeting_ar": "بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ",
   "salam": "السلام علیکم",
-  "lede": "آپ کو پُرخلوص دعوتِ شرکت دی جاتی ہے",
+  "lede": "اللہ تعالیٰ کے فضل و کرم سے",
   "name_1": "حذیفہ رشید",
   "joiner": "ہمراہ",
   "name_2_prefix": "دخترِ",
   "name_2": "بادشاہ عمر",
+  "after_names": "کی تقریبِ شادی میں آپ کو پُرخلوص دعوت دی جاتی ہے",
   "date": "2026-11-14",
   "time_start": "12:00",
   "time_end": "16:00",
@@ -20,5 +21,5 @@ window.INVITE = {
   "venue_address": "مین لہتراڑ روڈ، نزد صنم چوک، اسلام آباد",
   "maps_query": "Al Firdous Marriage Hall, Lehtrar Road, Sanam Chowk, Islamabad",
   "rsvp": ["0334-5121715", "0331-5080499"],
-  "closing": "آپ کی آمد ہمارے لیے باعثِ مسرت ہوگی"
+  "closing": "آپ کی تشریف آوری سے تقریب کی رونق میں اضافہ ہوگا"
 }
